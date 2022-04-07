@@ -1,7 +1,15 @@
-import time, os
+import time, glob, os, xlrd
+import numpy as np
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 #from selenium.webdriver.support.ui import WebDriverWait
+
+format_dict = {
+    'endnote_desktop': ['//*[@id="exportToEnwDesktopButton"]', 1000],
+    'excel': ['//*[@id="exportToExcelButton"]', 1000],
+    'txt': ['//*[@id="exportToFieldTaggedButton"]', 1000],
+    'ris': ['//*[@id="exportToRisButton"]', 1000]
+}
 
 
 class WOS:
@@ -10,21 +18,17 @@ class WOS:
         """
         TBC
         """
-        wos_params = kwargs['wos']
         # required parameters
-        self.url = wos_params['url']
-        self.username = wos_params['username']
-        self.password = wos_params['password']
+        self.url = kwargs['url']
+        self.username = kwargs['username']
+        self.password = kwargs['password']
+        self.work_path = kwargs['work_path']
 
         # optional parameters
-        self.reverse = wos_params.get('time_reverse', False)
-        self.format = wos_params.get('format', 'ris')
-
-        _save_path = wos_params.get('save_path', None)
-        if _save_path is None:
-            self.save_path = os.path.join(kwargs['work_path'], 'WOS')
-        else:
-            self.save_path = os.path.join(os.getcwd(), _save_path)
+        self.reverse = kwargs.get('time_reverse', False)
+        self.format = kwargs.get('format', 'ris')
+        self.pdf_path = kwargs.get('pdf_path',
+                                   os.path.join(self.work_path, 'PDF'))
 
         # browser and download setup
         """
@@ -48,16 +52,19 @@ class WOS:
         # set download dir
         prefs = {
             'profile.default_content_settings.popups': 0,
-            'download.default_directory': self.save_path
+            'download.default_directory': self.work_path
         }
         options.add_experimental_option('prefs', prefs)
-
+        # run in background
+        options.add_argument('headless')
         try:
             self.browser = webdriver.Chrome(chrome_options=options)
         except:
             self.browser = webdriver.Chrome(executable_path=kwargs.get(
                 'executable_path', None),
                                             chrome_options=options)
+
+        self.dois = None
 
         # 300s无响应就关闭窗口
         #self.wait = WebDriverWait(self.browser, 300)
@@ -93,9 +100,15 @@ class WOS:
             self.browser.find_element(
                 By.CSS_SELECTOR,
                 'button.cdx-but-md:nth-child(2) span:nth-child(1)').click()
-            start = self._download(start, i, flag)
+            self._download(start, i, flag)
+            # 导出文件按照包含的记录编号重命名
+            fname = 'refs-%06d-%06d' % (start, start +
+                                        format_dict[self.format][1] - 1)
+            self._rename_file(fname)
+            start = start + format_dict[self.format][1]
             i = i + 2
             flag = flag + 1
+
         time.sleep(10)
         self.browser.quit()
 
@@ -145,12 +158,6 @@ class WOS:
         time.sleep(3)
 
     def _download(self, start, i, flag):
-        format_dict = {
-            'endnote_desktop': ['//*[@id="exportToEnwDesktopButton"]', 1000],
-            'excel': ['//*[@id="exportToExcelButton"]', 1000],
-            'txt': ['//*[@id="exportToFieldTaggedButton"]', 1000],
-            'ris': ['//*[@id="exportToRisButton"]', 1000]
-        }
 
         # 选择导出格式
         self.browser.find_element(By.CSS_SELECTOR,
@@ -177,11 +184,6 @@ class WOS:
         # 等待下载完毕
         while len(os.listdir(self.save_path)) == flag:
             time.sleep(1)
-        # 导出文件按照包含的记录编号重命名
-        fname = 'record-%d-%d' % (start,
-                                  start + format_dict[self.format[1]] - 1)
-        self._rename_file(fname)
-        return start + format_dict[self.format][1]
 
     def _send_id(self, xpath, value):
         markto = self.browser.find_element(By.XPATH, xpath)
@@ -200,4 +202,70 @@ class WOS:
         files.sort(key=lambda x: os.path.getctime(x))
         _file = files[-1]
         _fname, suffix = os.path.splitext(_file)
-        os.rename(_file, os.path.join(self.save_path, fname, suffix))
+        self.suffix = suffix
+        os.rename(_file, os.path.join(self.save_path, fname + suffix))
+
+    @property
+    def all_refs(self):
+        all_refs = glob.glob(
+            os.path.join(self.save_path, "refs*" + self.suffix))
+        all_refs.sort()
+        return all_refs
+
+    @property
+    def dois(self, save_dois=False):
+        func_dict = {
+            'excel': self.dois_from_excel,
+            'txt': self.dois_from_txt,
+            'ris': self.dois_from_ris
+        }
+        func = func_dict.get(self.format, None)
+        if func is None:
+            raise AttributeError('Unsupported format!')
+        else:
+            dois = func()
+            if save_dois:
+                np.savetxt(os.path.join(self.save_path, "DOIs.txt"),
+                           dois,
+                           fmt="%s")
+            return dois
+
+    def dois_from_excel(self):
+        dois = []
+        for f in self.all_refs():
+            data = xlrd.open_workbook(f)
+            dois.extend(data.sheets()[0].col_values(28)[1:])
+        return dois
+
+    def dois_from_txt(self):
+        pass
+
+    def dois_from_ris(self):
+        pass
+
+    def get_pdfs(self, doi_file=None):
+        if doi_file is not None:
+            self.dois = np.loadtxt(doi_file, dtype=str)
+        else:
+            if self.dois is None:
+                raise AttributeError('DOI info missing.')
+
+        failed = []
+        for doi in self.dois:
+            if len(doi) > 0:
+                try:
+                    self.broswer.get("http://sci-hub.mksa.top")
+                    input = self.broswer.find_element(
+                        By.XPATH, '//*[@id="input"]/form/input[2]')
+                    input.send_keys(doi)
+                    self.broswer.find_element(By.XPATH,
+                                              '//*[@id="open"]/p').click()
+                    time.sleep(5)
+                    self.broswer.find_element(
+                        By.XPATH, '//*[@id="buttons"]/ul/li[2]/a').click()
+                    time.sleep(2)
+                except:
+                    failed.append(doi)
+        np.savetxt(os.path.join(self.save_path, "failed_download.txt"),
+                   failed,
+                   fmt="%s")
