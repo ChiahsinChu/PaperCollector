@@ -1,4 +1,4 @@
-import time, glob, os, xlrd
+import time, glob, os, xlrd, sys
 import numpy as np
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -12,104 +12,99 @@ format_dict = {
 }
 
 
-class WOS:
+class AutoTask:
 
-    def __init__(self, **kwargs) -> None:
-        """
-        TBC
-        """
-        # required parameters
-        self.url = kwargs['url']
-        self.username = kwargs['username']
-        self.password = kwargs['password']
-        self.work_path = kwargs['work_path']
+    def __init__(self, save_path, browser, executable_path) -> None:
+        self.save_path = os.path.abspath(save_path)
+        browser = browser.lower()
+        getattr(self, '%s_init' % browser)(executable_path)
+        self.check_save_path()
+        # 300s无响应就关闭窗口
+        #self.wait = WebDriverWait(self.browser, 300)
 
-        # optional parameters
-        self.reverse = kwargs.get('time_reverse', False)
-        self.format = kwargs.get('format', 'ris')
-        self.pdf_path = kwargs.get('pdf_path',
-                                   os.path.join(self.work_path, 'PDF'))
-
-        # browser and download setup
-        """
-        # Firefox
-        self.fp = webdriver.FirefoxProfile()
-        # 指定下载路径
-        self.fp.set_preference('browser.download.dir', self.save_path)
-        self.fp.set_preference("browser.download.folderList", 2)
-        # 是否显示开始
-        self.fp.set_preference("browser.download.manager.showWhenStarting", False)
-        # 对所给文件类型不再弹出框进行询问
-        self.fp.set_preference("browser.helperApps.neverAsk.saveToDisk",
-                               "text/plain")
-        self.browser = webdriver.Firefox(executable_path=executable_path,
-                                         firefox_profile=self.fp)
-        """
-
-        # Chrome
+    def chrome_init(self, executable_path):
         options = webdriver.ChromeOptions()
         # no popups
-        # set download dir
+        # set download path
         prefs = {
             'profile.default_content_settings.popups': 0,
-            'download.default_directory': self.work_path
+            'download.default_directory': self.save_path
         }
         options.add_experimental_option('prefs', prefs)
         # run in background
-        options.add_argument('headless')
+        #options.add_argument('headless')
         try:
             self.browser = webdriver.Chrome(chrome_options=options)
         except:
-            self.browser = webdriver.Chrome(executable_path=kwargs.get(
-                'executable_path', None),
+            self.browser = webdriver.Chrome(executable_path=executable_path,
                                             chrome_options=options)
 
-        self.dois = None
+    def firefox_init(self, executable_path):
+        fp = webdriver.FirefoxProfile()
+        # set download path
+        fp.set_preference('browser.download.dir', self.save_path)
+        fp.set_preference("browser.download.folderList", 2)
+        fp.set_preference("browser.download.manager.showWhenStarting", False)
+        fp.set_preference("browser.helperApps.neverAsk.saveToDisk",
+                          "text/plain")
+        self.browser = webdriver.Firefox(executable_path=executable_path,
+                                         firefox_profile=fp)
 
-        # 300s无响应就关闭窗口
-        #self.wait = WebDriverWait(self.browser, 300)
-        # 定义窗口最大化
-        #self.browser.maximize_window()
+    def check_save_path(self):
+        if os.path.isdir(self.save_path) == False:
+            os.makedirs(self.save_path)
+        else:
+            if os.listdir(self.save_path):
+                warning = input(
+                    "Given save path is not empty. Do you want to continue?\n[Input 'y' or 'Y' to confirm. && Input other to cancel.]"
+                )
+                if warning.lower() == 'y':
+                    pass
+                else:
+                    sys.exit()
+        self.flag = len(os.listdir(self.save_path))
+
+
+class WOS(AutoTask):
+
+    def __init__(self, **params) -> None:
+
+        # required parameters
+        self.url = params['url']
+        self.username = params['username']
+        self.password = params['password']
+        # optional parameters
+        self.reverse = params.get('time_reverse', False)
+        self.format = params.get('format', 'ris').lower()
+
+        super().__init__(params['wos_path'], params.get('browser', 'chrome'),
+                         params.get('executable_path', None))
 
     def download_refs(self):
-        # open the searching page
         self._login()
-        for ii in range(3):
-            try:
-                self._close_popup()
-            except:
-                pass
         self.browser.get(self.url)
-        time.sleep(5)
+        self._close_popup()
+        self._download_setup()
 
-        # 获取需要导出的文献数量
         n_refs = int(
             self.browser.find_element(By.CSS_SELECTOR,
                                       '.brand-blue').text.replace(',', ''))
-        if self.reverse:
-            self._set_time_reverse()
-        if os.path.isdir(self.save_path) == False:
-            os.makedirs(self.save_path)
-
-        # 开始导出
-        start = 1  # 起始记录
-        i = 0  # 导出记录的数字框id随导出次数递增
-        flag = 1  # mac文件夹默认有一个'.DS_Store'文件
-        while start < n_refs:
-            # Click "Export"
-            self.browser.find_element(
-                By.CSS_SELECTOR,
-                'button.cdx-but-md:nth-child(2) span:nth-child(1)').click()
-            self._download(start, i, flag)
-            # 导出文件按照包含的记录编号重命名
+        ii = 0
+        flag = self.flag + 1
+        for start in range(1, n_refs, format_dict[self.format][1]):
+            # download
+            self._single_download(start, ii)
+            ii = ii + 2
+            # wait to finish
+            while len(os.listdir(self.save_path)) == flag:
+                time.sleep(1)
+            flag = flag + 1
+            # rename
             fname = 'refs-%06d-%06d' % (start, start +
                                         format_dict[self.format][1] - 1)
             self._rename_file(fname)
-            start = start + format_dict[self.format][1]
-            i = i + 2
-            flag = flag + 1
 
-        time.sleep(10)
+        time.sleep(2)
         self.browser.quit()
 
     def _login(self):
@@ -125,8 +120,9 @@ class WOS:
         login = self.browser.find_element(By.CSS_SELECTOR, '#show')
         login.send_keys('Xiamen University')
         time.sleep(0.5)
-        self.browser.find_element(
-            By.CSS_SELECTOR, '.dropdown-item strong:nth-child(1)').click()
+        sel_unvi = self.browser.find_element(
+            By.CSS_SELECTOR, '.dropdown-item strong:nth-child(1)')
+        self.browser.execute_script("arguments[0].click();", sel_unvi)
         self.browser.find_element(By.CSS_SELECTOR, '#idpSkipButton').click()
         time.sleep(2)
         usr_name = self.browser.find_element(By.XPATH, '//*[@id="username"]')
@@ -138,14 +134,26 @@ class WOS:
         time.sleep(1)
         self.browser.find_element(
             By.XPATH, '/html/body/form/div/div[2]/p[2]/input[2]').click()
+        time.sleep(1)
 
     def _close_popup(self):
-        time.sleep(5)
-        self.browser.find_element(By.CSS_SELECTOR,
-                                  '#onetrust-accept-btn-handler').click()
-        time.sleep(2)
-        self.browser.find_element(By.CSS_SELECTOR,
-                                  '#pendo-close-guide-ecbac349').click()
+        for ii in range(3):
+            try:
+                time.sleep(5)
+                self.browser.find_element(
+                    By.CSS_SELECTOR, '#onetrust-accept-btn-handler').click()
+                time.sleep(2)
+                self.browser.find_element(
+                    By.CSS_SELECTOR, '#pendo-close-guide-ecbac349').click()
+            except:
+                continue
+            else:
+                break
+        time.sleep(0.5)
+
+    def _download_setup(self):
+        if self.reverse:
+            self._set_time_reverse()
 
     def _set_time_reverse(self):
         self.browser.find_element(
@@ -157,19 +165,25 @@ class WOS:
             "div.wrap-mode:nth-child(2) span:nth-child(1)").click()
         time.sleep(3)
 
-    def _download(self, start, i, flag):
-
-        # 选择导出格式
-        self.browser.find_element(By.CSS_SELECTOR,
-                                  format_dict[self.format][0]).click()
-        # 选择自定义记录条数
+    def _single_download(self, start, ii):
+        # Click "Export"
         self.browser.find_element(
-            By.CSS_SELECTOR,
-            '#radio3 label:nth-child(1) span:nth-child(1)').click()
-        # 输入起止序号
-        self._send_id('//*[@id="mat-input-%d"]' % i, start)
-        self._send_id('//*[@id="mat-input-%d"]' % (i + 1),
+            By.XPATH,
+            '//*[@id="snRecListTop"]/app-export-menu/div/button/span[1]'
+        ).click()
+        # Choose format
+        sel_fmt = self.browser.find_element(By.XPATH,
+                                            format_dict[self.format][0])
+        self.browser.execute_script("arguments[0].click();", sel_fmt)
+        time.sleep(1)
+        # Choose "Record from -- to --"
+        self.browser.find_element(By.XPATH,
+                                  '//*[@id="radio3"]/label/span[1]').click()
+        # input start/end id
+        self._send_id('//*[@id="mat-input-%d"]' % ii, start)
+        self._send_id('//*[@id="mat-input-%d"]' % (ii + 1),
                       start + format_dict[self.format][1] - 1)
+        """
         # 更改导出字段
         self.browser.find_element(By.CSS_SELECTOR,
                                   '.margin-top-5 button:nth-child(1)').click()
@@ -177,13 +191,12 @@ class WOS:
         self.browser.find_element(
             By.CSS_SELECTOR,
             'div.wrap-mode:nth-child(3) span:nth-child(1)').click()
-        # 点击导出
+        """
+        # Click "Export"
         self.browser.find_element(
-            By.CSS_SELECTOR,
-            'div.flex-align:nth-child(3) button:nth-child(1)').click()
-        # 等待下载完毕
-        while len(os.listdir(self.save_path)) == flag:
-            time.sleep(1)
+            By.XPATH,
+            '/html/body/app-wos/div/div/main/div/div[2]/app-input-route[1]/app-export-overlay/div/div[3]/div[2]/app-export-out-details/div/div[2]/form/div/div[2]/button[1]/span[1]/span'
+        ).click()
 
     def _send_id(self, xpath, value):
         markto = self.browser.find_element(By.XPATH, xpath)
@@ -214,21 +227,16 @@ class WOS:
 
     @property
     def dois(self, save_dois=False):
-        func_dict = {
-            'excel': self.dois_from_excel,
-            'txt': self.dois_from_txt,
-            'ris': self.dois_from_ris
-        }
-        func = func_dict.get(self.format, None)
-        if func is None:
-            raise AttributeError('Unsupported format!')
+        if self.format in ['excel', 'txt', 'ris']:
+            dois = getattr(self, 'dois_from_%s' % self.format)()
         else:
-            dois = func()
-            if save_dois:
-                np.savetxt(os.path.join(self.save_path, "DOIs.txt"),
-                           dois,
-                           fmt="%s")
-            return dois
+            raise AttributeError('Unsupported format!')
+
+        if save_dois:
+            np.savetxt(os.path.join(self.save_path, "DOIs.txt"),
+                       dois,
+                       fmt="%s")
+        return dois
 
     def dois_from_excel(self):
         dois = []
@@ -243,13 +251,31 @@ class WOS:
     def dois_from_ris(self):
         pass
 
-    def get_pdfs(self, doi_file=None):
-        if doi_file is not None:
-            self.dois = np.loadtxt(doi_file, dtype=str)
-        else:
-            if self.dois is None:
-                raise AttributeError('DOI info missing.')
 
+class SciHub(AutoTask):
+
+    def __init__(self, dois, **params) -> None:
+        """
+        Params
+        ------
+        dois: Array or List or Str
+            read from external txt file or pass a np.ndarray/list
+        """
+        self.get_dois(dois)
+        super().__init__(
+            params.get('scihub_path', os.path.join(params['wos_path'], 'PDF')),
+            params.get('browser', 'chrome'),
+            params.get('executable_path', None))
+
+    def get_dois(self, dois):
+        if isinstance(dois, list) or isinstance(dois, np.ndarray):
+            self.dois = dois
+        elif isinstance(self.dois, str):
+            self.dois = np.loadtxt(self.doi, dtype=str)
+        else:
+            raise AttributeError('Unsupported doi type!')
+
+    def download_pdfs(self):
         failed = []
         for doi in self.dois:
             if len(doi) > 0:
