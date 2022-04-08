@@ -1,178 +1,322 @@
+import time, glob, os, xlrd, sys, json
+import numpy as np
 from selenium import webdriver
-import time
-import os
+from selenium.webdriver.common.by import By
+#from selenium.webdriver.support.ui import WebDriverWait
+
+format_dict = {
+    'endnote_desktop': ['//*[@id="exportToEnwDesktopButton"]', 1000],
+    'excel': ['//*[@id="exportToExcelButton"]', 1000],
+    'txt': ['//*[@id="exportToFieldTaggedButton"]', 1000],
+    'ris': ['//*[@id="exportToRisButton"]', 1000]
+}
 
 
-def startdownload(url,
-                  record_num,
-                  SAVE_TO_DIRECTORY,
-                  record_format='excel',
-                  reverse=False):
-    '''url -> 检索结果网址; \n 
-       record_num -> 需要导出的记录条数(检索结果数); \n
-       SAVE_TO_DIRECTORY -> 记录导出存储路径(文件夹);\n
-       reverse -> 是否设置检索结果降序排列, default=False \n
-       ----------------------------------------------------
-       tip1:首次打开wos必须登录,在学校统一身份认证处需要手动输入验证码并点击登录; 
-       tip2:第一次导出时需要手动修改文件处理方式为"保存文件",并勾选"以后都采用相同动作处理此类文件"
-    '''
-    fp = webdriver.FirefoxProfile()
-    fp.set_preference('browser.download.dir', SAVE_TO_DIRECTORY)
-    fp.set_preference("browser.download.folderList", 2)
-    fp.set_preference("browser.download.manager.showWhenStarting", False)
-    fp.set_preference("browser.helperApps.neverAsk.saveToDisk", "text/plain")
-    browser = webdriver.Firefox(executable_path=r'geckodriver',
-                                firefox_profile=fp)
-    browser.get(url)
-    time.sleep(4)
-    login(browser)
-    browser.get(url)  # 登陆后会跳转到首页,这里直接重新打开检索结果页面
-    time.sleep(5)
+class AutoTask:
 
-    # 获取需要导出的文献数量
-    # record_num = int(browser.find_element_by_css_selector('.brand-blue').text)
-    # 按时间降序排列
-    if reverse:
-        browser.find_element_by_css_selector(
+    def __init__(self, save_path, browser, executable_path) -> None:
+        self.save_path = os.path.abspath(save_path)
+        browser = browser.lower()
+        getattr(self, '%s_init' % browser)(executable_path)
+        self.check_save_path()
+        # 300s无响应就关闭窗口
+        #self.wait = WebDriverWait(self.browser, 300)
+
+    def chrome_init(self, executable_path):
+        options = webdriver.ChromeOptions()
+        # no popups
+        # set download path
+        prefs = {
+            'profile.default_content_settings.popups': 0,
+            'download.default_directory': self.save_path
+        }
+        options.add_experimental_option('prefs', prefs)
+        # run in background
+        #options.add_argument('headless')
+        try:
+            self.browser = webdriver.Chrome(chrome_options=options)
+        except:
+            self.browser = webdriver.Chrome(executable_path=executable_path,
+                                            chrome_options=options)
+
+    def firefox_init(self, executable_path):
+        fp = webdriver.FirefoxProfile()
+        # set download path
+        fp.set_preference('browser.download.dir', self.save_path)
+        fp.set_preference("browser.download.folderList", 2)
+        fp.set_preference("browser.download.manager.showWhenStarting", False)
+        fp.set_preference("browser.helperApps.neverAsk.saveToDisk",
+                          "text/plain")
+        self.browser = webdriver.Firefox(executable_path=executable_path,
+                                         firefox_profile=fp)
+
+    def check_save_path(self):
+        if os.path.isdir(self.save_path) == False:
+            os.makedirs(self.save_path)
+        else:
+            if os.listdir(self.save_path):
+                warning = input(
+                    "Given save path is not empty. Do you want to continue?\n[Input 'y' or 'Y' to confirm. && Input other to cancel.]"
+                )
+                if warning.lower() == 'y':
+                    pass
+                else:
+                    sys.exit()
+        self.flag = len(os.listdir(self.save_path))
+
+
+class WOS(AutoTask):
+
+    def __init__(self, **params) -> None:
+
+        # required parameters
+        self.url = params['url']
+        self.username = params['username']
+        self.password = params['password']
+        self.institute = params['institute']
+        # optional parameters
+        self.reverse = params.get('time_reverse', False)
+        self.format = params.get('format', 'ris').lower()
+
+        super().__init__(params['wos_path'], params.get('browser', 'chrome'),
+                         params.get('executable_path', None))
+
+    def download_refs(self):
+        self._login()
+        self.browser.get(self.url)
+        self._close_popup()
+        self._download_setup()
+
+        n_refs = int(
+            self.browser.find_element(By.CSS_SELECTOR,
+                                      '.brand-blue').text.replace(',', ''))
+        ii = 0
+        flag = self.flag + 1
+        for start in range(1, n_refs, format_dict[self.format][1]):
+            # download
+            self._single_download(start, ii)
+            ii = ii + 2
+            # wait to finish
+            while len(os.listdir(self.save_path)) == flag:
+                time.sleep(1)
+            flag = flag + 1
+            # rename
+            fname = 'refs-%06d-%06d' % (start, start +
+                                        format_dict[self.format][1] - 1)
+            self._rename_file(fname)
+
+        time.sleep(10)
+        self.browser.quit()
+
+    def _login(self):
+        self.browser.get('http://www.webofknowledge.com/?DestApp=WOS')
+        self.browser.find_element(By.CSS_SELECTOR, '.mat-select-arrow').click()
+        # if you want to change the institue, change here!
+        self.browser.find_element(By.CSS_SELECTOR,
+                                  '#mat-option-9 span:nth-child(1)').click()
+        self.browser.find_element(
+            By.CSS_SELECTOR,
+            'button.wui-btn--login:nth-child(4) span:nth-child(1) span:nth-child(1)'
+        ).click()
+        login = self.browser.find_element(By.CSS_SELECTOR, '#show')
+        login.send_keys(self.institute)
+        time.sleep(0.5)
+        sel_unvi = self.browser.find_element(
+            By.CSS_SELECTOR, '.dropdown-item strong:nth-child(1)')
+        self.browser.execute_script("arguments[0].click();", sel_unvi)
+        self.browser.find_element(By.CSS_SELECTOR, '#idpSkipButton').click()
+        time.sleep(2)
+        usr_name = self.browser.find_element(By.XPATH, '//*[@id="username"]')
+        usr_name.send_keys(self.username)
+        usr_pw = self.browser.find_element(By.XPATH, '//*[@id="password"]')
+        usr_pw.send_keys(self.password)
+        self.browser.find_element(
+            By.XPATH, '//*[@id="casLoginForm"]/p[4]/button').click()
+        time.sleep(1)
+        self.browser.find_element(
+            By.XPATH, '/html/body/form/div/div[2]/p[2]/input[2]').click()
+        time.sleep(1)
+
+    def _close_popup(self):
+        for ii in range(3):
+            try:
+                time.sleep(5)
+                self.browser.find_element(
+                    By.CSS_SELECTOR, '#onetrust-accept-btn-handler').click()
+                time.sleep(2)
+                self.browser.find_element(
+                    By.CSS_SELECTOR, '#pendo-close-guide-ecbac349').click()
+            except:
+                continue
+            else:
+                break
+        time.sleep(0.5)
+
+    def _download_setup(self):
+        if self.reverse:
+            self._set_time_reverse()
+
+    def _set_time_reverse(self):
+        self.browser.find_element(
+            By.CSS_SELECTOR,
             '.top-toolbar wos-select:nth-child(1) button:nth-child(1) span:nth-child(2)'
         ).click()
-        browser.find_element_by_css_selector(
+        self.browser.find_element(
+            By.CSS_SELECTOR,
             "div.wrap-mode:nth-child(2) span:nth-child(1)").click()
         time.sleep(3)
 
-    # 叉掉弹窗。网站弹窗时常会改，报错的话可以自己重新获取一下节点哦。
-    browser.find_element_by_css_selector(
-        '#onetrust-accept-btn-handler').click()
-    time.sleep(1)
-    browser.find_element_by_css_selector('#pendo-close-guide-ecbac349').click()
+    def _single_download(self, start, ii):
+        # Click "Export"
+        self.browser.find_element(
+            By.XPATH,
+            '//*[@id="snRecListTop"]/app-export-menu/div/button/span[1]'
+        ).click()
+        # Choose format
+        sel_fmt = self.browser.find_element(By.XPATH,
+                                            format_dict[self.format][0])
+        self.browser.execute_script("arguments[0].click();", sel_fmt)
+        time.sleep(1)
+        # Choose "Record from -- to --"
+        self.browser.find_element(By.XPATH,
+                                  '//*[@id="radio3"]/label/span[1]').click()
+        # input start/end id
+        self._send_id('//*[@id="mat-input-%d"]' % ii, start)
+        self._send_id('//*[@id="mat-input-%d"]' % (ii + 1),
+                      start + format_dict[self.format][1] - 1)
+        """
+        # 更改导出字段
+        self.browser.find_element(By.CSS_SELECTOR,
+                                  '.margin-top-5 button:nth-child(1)').click()
+        # 选择所需字段(excel:3完整/4自定义; txt:3完整/4完整+引文)
+        self.browser.find_element(
+            By.CSS_SELECTOR,
+            'div.wrap-mode:nth-child(3) span:nth-child(1)').click()
+        """
+        # Click "Export"
+        self.browser.find_element(
+            By.XPATH,
+            '/html/body/app-wos/div/div/main/div/div[2]/app-input-route[1]/app-export-overlay/div/div[3]/div[2]/app-export-out-details/div/div[2]/form/div/div[2]/button[1]/span[1]/span'
+        ).click()
 
-    # 开始导出
-    start = 1  # 起始记录
-    i = 0  # 导出记录的数字框id随导出次数递增
-    flag = 1  # mac文件夹默认有一个'.DS_Store'文件
-    while start < record_num:
-        browser.find_element_by_css_selector(
-            'button.cdx-but-md:nth-child(2) span:nth-child(1)').click()  # 导出
-        if record_format == 'excel':
-            browser.find_element_by_css_selector(
-                '#exportToExcelButton').click()  # 选择导出格式为excel
-            browser.find_element_by_css_selector(
-                '#radio3 label:nth-child(1) span:nth-child(1)').click(
-                )  # 选择自定义记录条数
-            send_key(browser, '#mat-input-%d' % i, start)  #mat-input-2
-            send_key(browser, '#mat-input-%d' % (i + 1), start + 999)
-            browser.find_element_by_css_selector(
-                '.margin-top-5 button:nth-child(1)').click()  # 更改导出字段
-            browser.find_element_by_css_selector(
-                'div.wrap-mode:nth-child(3) span:nth-child(1)').click(
-                )  # 选择所需字段(excel:3完整/4自定义; txt:3完整/4完整+引文)
-            browser.find_element_by_css_selector(
-                'div.flex-align:nth-child(3) button:nth-child(1)').click(
-                )  # 点击导出
-            while len(os.listdir(SAVE_TO_DIRECTORY)) == flag:
-                time.sleep(1)  # 等待下载完毕
-            # 导出文件按照包含的记录编号重命名
-            rename_file(SAVE_TO_DIRECTORY,
-                        'record-' + str(start) + '-' + str(start + 999),
-                        record_format=record_format)
-            start = start + 1000
-        else:
-            browser.find_element_by_css_selector(
-                '#exportToFieldTaggedButton').click()  # 选择导出格式为txt
-            browser.find_element_by_css_selector(
-                '#radio3 label:nth-child(1) span:nth-child(1) span:nth-child(1)'
-            ).click()  # 选择自定义记录条数
-            send_key(browser, '#mat-input-%d' % i, start)  #mat-input-2
-            send_key(browser, '#mat-input-%d' % (i + 1), start + 499)
-            browser.find_element_by_css_selector(
-                '.margin-top-5 button:nth-child(1)').click()  # 更改导出字段
-            browser.find_element_by_css_selector(
-                'div.wrap-mode:nth-child(4) span:nth-child(1)').click(
-                )  # 选择所需字段(excel:3完整/4自定义; txt:3完整/4完整+引文)
-            browser.find_element_by_css_selector(
-                'div.flex-align:nth-child(3) button:nth-child(1)').click(
-                )  # 点击导出
-            while len(os.listdir(SAVE_TO_DIRECTORY)) == flag:
-                time.sleep(1)  # 等待下载完毕
-            # 导出文件按照包含的记录编号重命名
-            rename_file(SAVE_TO_DIRECTORY,
-                        'record-' + str(start) + '-' + str(start + 499),
-                        record_format=record_format)
-            start = start + 500
-        i = i + 2
-        flag = flag + 1
+    def _send_id(self, xpath, value):
+        markto = self.browser.find_element(By.XPATH, xpath)
+        markto.clear()
+        markto.send_keys(value)
 
-    time.sleep(10)
-    browser.quit()
+    def _rename_file(self, fname):
+        while True:
+            files = list(
+                filter(lambda x: 'savedrecs' in x and len(x.split('.')) == 2,
+                       os.listdir(self.save_path)))
+            if len(files) > 0:
+                break
+        # add path to each file
+        files = [os.path.join(self.save_path, f) for f in files]
+        files.sort(key=lambda x: os.path.getctime(x))
+        _file = files[-1]
+        _fname, suffix = os.path.splitext(_file)
+        self.suffix = suffix
+        os.rename(_file, os.path.join(self.save_path, fname + suffix))
 
 
-def login(browser):
-    '''登录wos'''
-    # 通过CHINA CERNET Federation登录
-    browser.find_element_by_css_selector('.mat-select-arrow').click()
-    browser.find_element_by_css_selector(
-        '#mat-option-9 span:nth-child(1)').click()
-    browser.find_element_by_css_selector(
-        'button.wui-btn--login:nth-child(4) span:nth-child(1) span:nth-child(1)'
-    ).click()
-    time.sleep(3)
-    login = browser.find_element_by_css_selector('#show')
-    login.send_keys('xxxx大学')  # 改成你的学校名
-    time.sleep(0.5)
-    browser.find_element_by_css_selector(
-        '.dropdown-item strong:nth-child(1)').click()
-    browser.find_element_by_css_selector('#idpSkipButton').click()
-    time.sleep(1)
-    #! 跳转到学校的统一身份验证(想自动输入账号密码就把下面两行注释解除,按照自己学校的网址修改一下css选择器路径)
-    # browser.find_element_by_css_selector('input#un').send_keys('你的学号') # 改成你的学号/账号
-    # browser.find_element_by_css_selector('input#pd').send_keys('你的密码') # 改成你的密码
-    time.sleep(20)  #! 手动输入账号、密码、验证码，点登录
+class DOIGenerator:
+
+    def __init__(self, refs_list, save_path) -> None:
+        suffix_dict = {
+            ".ris": "ris",
+            ".xls": "excel",
+            ".html": "html",
+            ".txt": "txt"
+        }
+
+        self.all_refs = refs_list
+        self.save_path = save_path
+        fname, suffix = os.path.splitext(self.all_refs[0])
+        try:
+            self.format = suffix_dict[suffix]
+        except:
+            raise AttributeError('Unsupported format!')
+
+    def export_dois(self):
+        dois = getattr(self, 'dois_from_%s' % self.format)()
+        #print(dois)
+        dois = self.rm_duplicate(dois)
+        try:
+            np.savetxt(os.path.join(self.save_path, "DOIs.txt"),
+                       dois,
+                       fmt="%s")
+        except:
+            raise AttributeError('Missing save path for DOIs.txt')
+        return dois
+
+    def dois_from_excel(self):
+        dois = []
+        for f in self.all_refs:
+            data = xlrd.open_workbook(f)
+            doi_id = data.sheets()[0].row_values(0).index("DOI")
+            dois.extend(data.sheets()[0].col_values(doi_id)[1:])
+        return dois
+
+    def dois_from_txt(self):
+        dois = []
+        for f in self.all_refs():
+            data = xlrd.open_workbook(f)
+            doi_id = data.sheets()[0].row_values(0).index("DOI")
+            dois.extend(data.sheets()[0].col_values(doi_id)[1:])
+        return dois
+
+    def dois_from_ris(self):
+        pass
+
+    def dois_from_html(self):
+        pass
+
+    def rm_duplicate(self, dois):
+        dois = list(set(dois))
+        dois.sort()
+        if len(dois[0]) == 0:
+            dois = dois[1:]
+        return dois
 
 
-def send_key(browser, path, value):
-    '''browser -> browser;\n
-       path -> css选择器;\n
-       value -> 填入值
-    '''
-    markto = browser.find_element_by_css_selector(path)
-    markto.clear()
-    markto.send_keys(value)
+class SciHub(AutoTask):
 
+    def __init__(self, dois, **params) -> None:
+        """
+        Params
+        ------
+        dois: Array or List or Str
+            read from external txt file or pass a np.ndarray/list
+        """
+        self.dois = np.loadtxt(dois, dtype=str)
+        self.save_path = params.get('scihub_path',
+                                    os.path.join(params['wos_path'], 'PDF'))
+        super().__init__(self.save_path, params.get('browser', 'chrome'),
+                         params.get('executable_path', None))
 
-def rename_file(SAVE_TO_DIRECTORY, name, record_format='excel'):
-    '''导出文件重命名 \n
-       SAVE_TO_DIRECTORY -> 导出记录存储位置(文件夹)；\n 
-       name -> 重命名为
-    '''
-    # files = list(filter(lambda x:'savedrecs' in x and len(x.split('.'))==2,os.listdir(SAVE_TO_DIRECTORY)))
-    while True:
-        files = list(
-            filter(lambda x: 'savedrecs' in x and len(x.split('.')) == 2,
-                   os.listdir(SAVE_TO_DIRECTORY)))
-        if len(files) > 0:
-            break
-
-    files = [os.path.join(SAVE_TO_DIRECTORY, f)
-             for f in files]  # add path to each file
-    files.sort(key=lambda x: os.path.getctime(x))
-    newest_file = files[-1]
-    # newest_file=os.path.join(SAVE_TO_DIRECTORY,'savedrecs.txt')
-    if record_format == 'excel':
-        os.rename(newest_file, os.path.join(SAVE_TO_DIRECTORY, name + ".xls"))
-    else:
-        os.rename(newest_file, os.path.join(SAVE_TO_DIRECTORY, name + ".txt"))
-
-
-if __name__ == '__main__':
-
-    # WOS“检索结果”页面的网址
-    url = 'https://www.webofscience.com/wos/woscc/summary/64c4e5ff-832d-476d-8112-51e908a600b1-1d5405d5/relevance/1'
-    # 导出到本地的存储路径(自行修改)
-    download_path = '/Users/username/folder'
-
-    startdownload(url,
-                  80195,
-                  download_path,
-                  record_format='excel',
-                  reverse=False)  # 主要函数
-    print('Done')
+    def download_pdfs(self):
+        failed = []
+        for doi in self.dois:
+            try:
+                self.browser.get("http://sci-hub.mksa.top/" + doi)
+                time.sleep(2)
+                save = self.browser.find_element(
+                    By.XPATH, '//*[@id="buttons"]/ul/li[2]/a')
+                self.browser.execute_script("arguments[0].click();", save)
+                """
+                try:
+                    self.browser.switch_to.alert.accept()
+                except:
+                    pass
+                """
+                time.sleep(1)
+            except:
+                failed.append(doi)
+        while len(glob.glob(os.path.join(
+                self.save_path, '*.pdf'))) + len(failed) < len(self.dois):
+            time.sleep(10)
+        np.savetxt(os.path.join(self.save_path, "failed_download.txt"),
+                   failed,
+                   fmt="%s")
+        self.browser.quit()

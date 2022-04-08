@@ -11,11 +11,12 @@ Call module:
 
 from setuptools import setup, find_packages
 
-setup(
-    name="papercollector",
-    version="1.0",
-    author="ChiahsinChu",
-    author_email="xmuchiahsin@gmail.com",
-    packages=find_packages('papercollector'),
-    exclude_package_date={'': ['.gitignore']},
-)
+setup(name="papercollector",
+      version="1.0",
+      author="ChiahsinChu",
+      author_email="xmuchiahsin@gmail.com",
+      packages=find_packages('papercollector'),
+      exclude_package_date={'': ['.gitignore']},
+      entry_points={
+          'console_scripts': ['ppclt = papercollector.entrypoint:main']
+      })
