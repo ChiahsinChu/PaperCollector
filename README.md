@@ -37,18 +37,19 @@ python setpy.py install
 ### Download references from
 
 ```bash
-papercltor wos params.json
+ppclt wos params.json
 ```
 
 ```bash
-papercltor doi params.json --save SAVE_PATH
+ppclt doi params.json --save SAVE_PATH
 ```
 
 ```bash
-papercltor pdf params.json --external DOIs.txt
+ppclt pdf params.json --external DOIs.txt
 ```
 
 ## Reference
 
 [WOS](https://blog.csdn.net/Parzival_/article/details/122360528)
+
 [Download setup of selenium](https://blog.csdn.net/z15517303852/article/details/90579577)
