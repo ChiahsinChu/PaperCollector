@@ -1,13 +1,5 @@
 # PaperCollector
 
---
-
-To Do List:
-
-- [ ] extract DOI from txt/ris/html
-
---
-
 This is a tiny package to:
 
 - Automactically save ALL searching results of [`Web of Science (WOS)`](http://www.webofknowledge.com/?DestApp=WOS)
@@ -53,3 +45,11 @@ ppclt pdf params.json --external DOIs.txt
 [WOS](https://blog.csdn.net/Parzival_/article/details/122360528)
 
 [Download setup of selenium](https://blog.csdn.net/z15517303852/article/details/90579577)
+
+---
+
+To Do List:
+
+- [ ] extract DOI from txt/ris/html
+
+---
