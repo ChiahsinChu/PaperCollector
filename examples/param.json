@@ -1,0 +1,9 @@
+{
+    "wos_path": "./WOS",
+    "url": "https://www.webofscience.com/wos/alldb/summary/aebb0918-c57b-43c2-a16c-78a173fa60f7-2f5adc7b/relevance/1",
+    "username": 100000000000,
+    "password": "Password",
+    "institute": "Fake University",
+    "format": "excel",
+    "scihub_path": "./SciHub"
+}
