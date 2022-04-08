@@ -32,7 +32,7 @@ class AutoTask:
         }
         options.add_experimental_option('prefs', prefs)
         # run in background
-        #options.add_argument('headless')
+        options.add_argument('headless')
         try:
             self.browser = webdriver.Chrome(chrome_options=options)
         except:
@@ -75,8 +75,8 @@ class WOS(AutoTask):
         self.password = params['password']
         self.institute = params['institute']
         # optional parameters
-        self.reverse = params.get('time_reverse', False)
         self.format = params.get('format', 'ris').lower()
+        self.sortby = params.get('sortby', None)
 
         super().__init__(params['wos_path'], params.get('browser', 'chrome'),
                          params.get('executable_path', None))
@@ -85,7 +85,8 @@ class WOS(AutoTask):
         self._login()
         self.browser.get(self.url)
         self._close_popup()
-        self._download_setup()
+        if self.sortby is not None:
+            self._sort()
 
         n_refs = int(
             self.browser.find_element(By.CSS_SELECTOR,
@@ -152,19 +153,29 @@ class WOS(AutoTask):
                 break
         time.sleep(0.5)
 
-    def _download_setup(self):
-        if self.reverse:
-            self._set_time_reverse()
-
-    def _set_time_reverse(self):
+    def _sort(self):
+        sort_dict = {
+            'Date: newest first':
+            '//*[@id="date-descending"]',
+            'Date: oldest first':
+            '//*[@id="date-ascending"]',
+            'Citations: highest first':
+            '//*[@id="times-cited-descending"]',
+            'Citations: lowest first':
+            '//*[@id="times-cited-ascending"]',
+            'Usage (all time): most first':
+            '//*[@id="usage-count-descending"]',
+            'Usage (last 180 days): most first':
+            '//*[@id="usage-count-180-descending"]'
+        }
+        # Click "Sort by"
         self.browser.find_element(
             By.CSS_SELECTOR,
             '.top-toolbar wos-select:nth-child(1) button:nth-child(1) span:nth-child(2)'
         ).click()
-        self.browser.find_element(
-            By.CSS_SELECTOR,
-            "div.wrap-mode:nth-child(2) span:nth-child(1)").click()
-        time.sleep(3)
+        sel_sort = self.browser.find_element(By.XPATH, sort_dict[self.sortby])
+        self.browser.execute_script("arguments[0].click();", sel_sort)
+        time.sleep(2)
 
     def _single_download(self, start, ii):
         # Click "Export"
