@@ -296,17 +296,17 @@ class DOIGenerator:
         with open(os.path.join(self.save_path, "DOIs.txt"),
                   'w',
                   encoding='UTF-8') as f_out:
-            for ref in self.all_refs():
+            for ref in self.all_refs:
                 with open(ref, 'rU', encoding='UTF-8') as f_in:
                     for line in f_in:
-                        if re.search("DI", line):
+                        if re.match("DI", line):
                             f_out.writelines(line[3:])
 
     def dois_from_ris(self):
         with open(os.path.join(self.save_path, "DOIs.txt"),
                   'w',
                   encoding='UTF-8') as f_out:
-            for ref in self.all_refs():
+            for ref in self.all_refs:
                 with open(ref, 'rU', encoding='UTF-8') as f_in:
                     for line in f_in:
                         if re.match("DO", line):
@@ -316,7 +316,7 @@ class DOIGenerator:
         with open(os.path.join(self.save_path, "DOIs.txt"),
                   'w',
                   encoding='UTF-8') as f_out:
-            for ref in self.all_refs():
+            for ref in self.all_refs:
                 with open(ref, 'rU', encoding='UTF-8') as f_in:
                     # don't save the first result
                     flag_0 = 0

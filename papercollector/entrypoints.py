@@ -10,20 +10,38 @@ def parse_args():
     """
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument("command",
-                        help="Task type",
-                        choices=['wos', 'doi', 'pdf'])
-    parser.add_argument("input", help="Input file")
-    parser.add_argument("-s",
-                        "--save",
-                        help="(command: doi) Save path for DOIs.txt",
-                        type=str,
-                        default=None)
-    parser.add_argument("-e",
-                        "--external",
-                        help="(command: doi/pdf) Read from external files",
-                        type=str,
-                        default=None)
+    subparsers = parser.add_subparsers(title="Valid subcommands",
+                                       dest="command")
+
+    # WOS
+    parser_wos = subparsers.add_parser(
+        'wos', help='Download reference files from Web of Science.')
+    parser_wos.add_argument("input", help="Input Json file")
+
+    # DOI
+    parser_doi = subparsers.add_parser(
+        'doi', help='Extract DOIs from reference files.')
+    parser_doi.add_argument("-i", "--input", help="Input Json file")
+    parser_doi.add_argument("-s",
+                            "--save",
+                            help="Specify save path for DOIs.txt.",
+                            type=str,
+                            default=None)
+    parser_doi.add_argument("-e",
+                            "--external",
+                            help="Specify reference files (support wildcard).",
+                            type=str,
+                            default=None)
+    # PDF
+    parser_pdf = subparsers.add_parser('pdf',
+                                       help='Download PDF files from Sci-Hub.')
+    parser_pdf.add_argument("input", help="Input Json file")
+    parser_pdf.add_argument("-e",
+                            "--external",
+                            help="Specify txt file for DOIs.",
+                            type=str,
+                            default=None)
+
     parsed_args = parser.parse_args()
     if parsed_args.command is None:
         parser.print_help()
