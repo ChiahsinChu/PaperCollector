@@ -1,8 +1,9 @@
-import time, glob, os, xlrd, sys, json
+import time, glob, os, xlrd, sys, logging
 import numpy as np
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-#from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 format_dict = {
     'endnote_desktop': ['//*[@id="exportToEnwDesktopButton"]', 1000],
@@ -10,6 +11,15 @@ format_dict = {
     'txt': ['//*[@id="exportToFieldTaggedButton"]', 1000],
     'ris': ['//*[@id="exportToRisButton"]', 1000]
 }
+refs_prefix = 'savedrecs'
+
+logger = logging.getLogger(__name__)
+logger.setLevel(level=logging.INFO)
+handler = logging.FileHandler("ppclt.log")
+handler.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
 
 
 class AutoTask:
@@ -19,8 +29,7 @@ class AutoTask:
         browser = browser.lower()
         getattr(self, '%s_init' % browser)(executable_path)
         self.check_save_path()
-        # 300s无响应就关闭窗口
-        #self.wait = WebDriverWait(self.browser, 300)
+        self.wait = WebDriverWait(self.browser, 60)
 
     def chrome_init(self, executable_path):
         options = webdriver.ChromeOptions()
@@ -32,12 +41,13 @@ class AutoTask:
         }
         options.add_experimental_option('prefs', prefs)
         # run in background
-        options.add_argument('headless')
+        #options.add_argument('headless')
         try:
             self.browser = webdriver.Chrome(chrome_options=options)
         except:
             self.browser = webdriver.Chrome(executable_path=executable_path,
                                             chrome_options=options)
+        self.browser.implicitly_wait(10)
 
     def firefox_init(self, executable_path):
         fp = webdriver.FirefoxProfile()
@@ -64,11 +74,19 @@ class AutoTask:
                     sys.exit()
         self.flag = len(os.listdir(self.save_path))
 
+    def wait_for_click(self, by, value):
+        button = self.wait.until(EC.element_to_be_clickable((by, value)))
+        self.browser.execute_script("arguments[0].click();", button)
+
+    def wait_for_sendkeys(self, by, value, keys):
+        input = self.wait.until(EC.presence_of_element_located((by, value)))
+        input.send_keys(keys)
+
 
 class WOS(AutoTask):
 
     def __init__(self, **params) -> None:
-
+        logger.info("Init WOS")
         # required parameters
         self.url = params['url']
         self.username = params['username']
@@ -81,30 +99,31 @@ class WOS(AutoTask):
         super().__init__(params['wos_path'], params.get('browser', 'chrome'),
                          params.get('executable_path', None))
 
-    def download_refs(self):
+    def download(self):
         self._login()
         self.browser.get(self.url)
         self._close_popup()
         if self.sortby is not None:
             self._sort()
 
+        logger.info("Start downloading from WOS")
         n_refs = int(
             self.browser.find_element(By.CSS_SELECTOR,
                                       '.brand-blue').text.replace(',', ''))
         ii = 0
-        flag = self.flag + 1
+        #flag = self.flag + 1
         for start in range(1, n_refs, format_dict[self.format][1]):
             # download
             self._single_download(start, ii)
             ii = ii + 2
+            """
             # wait to finish
             while len(os.listdir(self.save_path)) == flag:
                 time.sleep(1)
-            flag = flag + 1
-            # rename
-            fname = 'refs-%06d-%06d' % (start, start +
-                                        format_dict[self.format][1] - 1)
-            self._rename_file(fname)
+            """
+            #flag = flag + 1
+        # rename
+        self._rename()
 
         time.sleep(10)
         self.browser.quit()
@@ -112,7 +131,7 @@ class WOS(AutoTask):
     def _login(self):
         self.browser.get('http://www.webofknowledge.com/?DestApp=WOS')
         self.browser.find_element(By.CSS_SELECTOR, '.mat-select-arrow').click()
-        # if you want to change the institue, change here!
+        # * if you want to change the institue, change here!
         self.browser.find_element(By.CSS_SELECTOR,
                                   '#mat-option-9 span:nth-child(1)').click()
         self.browser.find_element(
@@ -126,14 +145,17 @@ class WOS(AutoTask):
             By.CSS_SELECTOR, '.dropdown-item strong:nth-child(1)')
         self.browser.execute_script("arguments[0].click();", sel_unvi)
         self.browser.find_element(By.CSS_SELECTOR, '#idpSkipButton').click()
-        time.sleep(2)
-        usr_name = self.browser.find_element(By.XPATH, '//*[@id="username"]')
+        time.sleep(5)
+        # * If you want to have a new login page of your institue, change here
+        usr_name = self.browser.find_element(By.ID, 'username')
+        #usr_name = self.browser.find_element(By.XPATH, '//*[@id="username"]')
         usr_name.send_keys(self.username)
-        usr_pw = self.browser.find_element(By.XPATH, '//*[@id="password"]')
+        usr_pw = self.browser.find_element(By.ID, 'password')
+        #usr_pw = self.browser.find_element(By.XPATH, '//*[@id="password"]')
         usr_pw.send_keys(self.password)
         self.browser.find_element(
             By.XPATH, '//*[@id="casLoginForm"]/p[4]/button').click()
-        time.sleep(1)
+        time.sleep(2)
         self.browser.find_element(
             By.XPATH, '/html/body/form/div/div[2]/p[2]/input[2]').click()
         time.sleep(1)
@@ -178,11 +200,12 @@ class WOS(AutoTask):
         time.sleep(2)
 
     def _single_download(self, start, ii):
+        time.sleep(3)
         # Click "Export"
-        self.browser.find_element(
+        export = self.browser.find_element(
             By.XPATH,
-            '//*[@id="snRecListTop"]/app-export-menu/div/button/span[1]'
-        ).click()
+            '//*[@id="snRecListTop"]/app-export-menu/div/button/span[1]')
+        self.browser.execute_script("arguments[0].click();", export)
         # Choose format
         sel_fmt = self.browser.find_element(By.XPATH,
                                             format_dict[self.format][0])
@@ -215,6 +238,7 @@ class WOS(AutoTask):
         markto.clear()
         markto.send_keys(value)
 
+    """
     def _rename_file(self, fname):
         while True:
             files = list(
@@ -226,9 +250,27 @@ class WOS(AutoTask):
         files = [os.path.join(self.save_path, f) for f in files]
         files.sort(key=lambda x: os.path.getctime(x))
         _file = files[-1]
-        _fname, suffix = os.path.splitext(_file)
+    """
+
+    def _rename(self):
+        """
+        Rename the latest downloaded files 
+        savedrecs.* to refs-*-.*
+        """
+        files = glob.glob(os.path.join(self.save_path, refs_prefix + '*'))
+        n_files = len(files)
+        _fname, suffix = os.path.splitext(files[0])
         self.suffix = suffix
-        os.rename(_file, os.path.join(self.save_path, fname + suffix))
+
+        fname = 'refs-%06d-%06d' % (1, format_dict[self.format][1])
+        os.rename(refs_prefix + suffix,
+                  os.path.join(self.save_path, fname + suffix))
+        for ii in range(1, n_files):
+            fname = 'refs-%06d-%06d' % (
+                ii * format_dict[self.format][1],
+                (ii + 1) * format_dict[self.format][1] - 1)
+            os.rename("%s(%d)%s" % (refs_prefix, ii, suffix),
+                      os.path.join(self.save_path, fname + suffix))
 
 
 class DOIGenerator:
