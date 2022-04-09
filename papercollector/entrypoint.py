@@ -1,4 +1,6 @@
-import json, sys, argparse
+import json
+import sys
+import argparse
 from papercollector.main import *
 
 
@@ -37,7 +39,7 @@ def load_json(json_file):
 def wos(**kwargs):
     params = load_json(kwargs['input'])
     proj = WOS(**params)
-    proj.download_refs()
+    proj.download()
 
 
 def doi(**kwargs):
@@ -63,7 +65,7 @@ def pdf(**kwargs):
             doi(**kwargs)
         dois = os.path.join(params['wos_path'], 'DOIs.txt')
     proj = SciHub(dois, **params)
-    proj.download_pdfs()
+    proj.download()
 
 
 def main():

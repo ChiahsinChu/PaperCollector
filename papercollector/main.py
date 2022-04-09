@@ -1,4 +1,10 @@
-import time, glob, os, xlrd, sys, logging
+import time
+import glob
+import os
+import xlrd
+import sys
+import logging
+import re
 import numpy as np
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -28,8 +34,8 @@ class AutoTask:
         self.save_path = os.path.abspath(save_path)
         browser = browser.lower()
         getattr(self, '%s_init' % browser)(executable_path)
-        self.check_save_path()
         self.wait = WebDriverWait(self.browser, 60)
+        self.check_save_path()
 
     def chrome_init(self, executable_path):
         options = webdriver.ChromeOptions()
@@ -47,7 +53,6 @@ class AutoTask:
         except:
             self.browser = webdriver.Chrome(executable_path=executable_path,
                                             chrome_options=options)
-        self.browser.implicitly_wait(10)
 
     def firefox_init(self, executable_path):
         fp = webdriver.FirefoxProfile()
@@ -114,17 +119,15 @@ class WOS(AutoTask):
         logger.info("%s References in total" % n_refs)
 
         ii = 0
-        #flag = self.flag + 1
+        flag = self.flag + 1
         for start in range(1, n_refs, format_dict[self.format][1]):
             # download
             self._single_download(start, ii)
             ii = ii + 2
-            """
             # wait to finish
             while len(os.listdir(self.save_path)) < flag:
                 time.sleep(1)
-            """
-            #flag = flag + 1
+            flag = flag + 1
         # rename
         self._rename()
         time.sleep(10)
@@ -235,20 +238,6 @@ class WOS(AutoTask):
                     (start, start + format_dict[self.format][1] - 1))
         time.sleep(5)
 
-    """
-    def _rename_file(self, fname):
-        while True:
-            files = list(
-                filter(lambda x: 'savedrecs' in x and len(x.split('.')) == 2,
-                       os.listdir(self.save_path)))
-            if len(files) > 0:
-                break
-        # add path to each file
-        files = [os.path.join(self.save_path, f) for f in files]
-        files.sort(key=lambda x: os.path.getctime(x))
-        _file = files[-1]
-    """
-
     def _rename(self):
         """
         Rename the latest downloaded files 
@@ -291,16 +280,9 @@ class DOIGenerator:
             raise AttributeError('Unsupported format!')
 
     def export_dois(self):
-        dois = getattr(self, 'dois_from_%s' % self.format)()
-        #print(dois)
-        dois = self.rm_duplicate(dois)
-        try:
-            np.savetxt(os.path.join(self.save_path, "DOIs.txt"),
-                       dois,
-                       fmt="%s")
-        except:
+        if self.save_path is None:
             raise AttributeError('Missing save path for DOIs.txt')
-        return dois
+        getattr(self, 'dois_from_%s' % self.format)()
 
     def dois_from_excel(self):
         dois = []
@@ -308,28 +290,46 @@ class DOIGenerator:
             data = xlrd.open_workbook(f)
             doi_id = data.sheets()[0].row_values(0).index("DOI")
             dois.extend(data.sheets()[0].col_values(doi_id)[1:])
-        return dois
+        np.savetxt(os.path.join(self.save_path, "DOIs.txt"), dois, fmt="%s")
 
     def dois_from_txt(self):
-        dois = []
-        for f in self.all_refs():
-            data = xlrd.open_workbook(f)
-            doi_id = data.sheets()[0].row_values(0).index("DOI")
-            dois.extend(data.sheets()[0].col_values(doi_id)[1:])
-        return dois
+        with open(os.path.join(self.save_path, "DOIs.txt"),
+                  'w',
+                  encoding='UTF-8') as f_out:
+            for ref in self.all_refs():
+                with open(ref, 'rU', encoding='UTF-8') as f_in:
+                    for line in f_in:
+                        if re.search("DI", line):
+                            f_out.writelines(line[3:])
 
     def dois_from_ris(self):
-        pass
+        with open(os.path.join(self.save_path, "DOIs.txt"),
+                  'w',
+                  encoding='UTF-8') as f_out:
+            for ref in self.all_refs():
+                with open(ref, 'rU', encoding='UTF-8') as f_in:
+                    for line in f_in:
+                        if re.match("DO", line):
+                            f_out.writelines(line[6:])
 
     def dois_from_html(self):
-        pass
-
-    def rm_duplicate(self, dois):
-        dois = list(set(dois))
-        dois.sort()
-        if len(dois[0]) == 0:
-            dois = dois[1:]
-        return dois
+        with open(os.path.join(self.save_path, "DOIs.txt"),
+                  'w',
+                  encoding='UTF-8') as f_out:
+            for ref in self.all_refs():
+                with open(ref, 'rU', encoding='UTF-8') as f_in:
+                    # don't save the first result
+                    flag_0 = 0
+                    # save two lines after DOI
+                    flag_1 = 0
+                    for line in f_in:
+                        flag_1 = flag_1 + 1
+                        if re.match(r"<b>DOI:</b>", line):
+                            flag_0 = flag_0 + 1
+                            flag_1 = 0
+                        if flag_0 > 0 and flag_1 == 2:
+                            line = line[7:-9] + "\n"
+                            f_out.writelines(line)
 
 
 class SciHub(AutoTask):
@@ -342,26 +342,18 @@ class SciHub(AutoTask):
             read from external txt file or pass a np.ndarray/list
         """
         self.dois = np.loadtxt(dois, dtype=str)
+        self.rm_duplicate()
         self.save_path = params.get('scihub_path',
                                     os.path.join(params['wos_path'], 'PDF'))
         super().__init__(self.save_path, params.get('browser', 'chrome'),
                          params.get('executable_path', None))
 
-    def download_pdfs(self):
+    def download(self):
         failed = []
         for doi in self.dois:
             try:
                 self.browser.get("http://sci-hub.mksa.top/" + doi)
-                time.sleep(2)
-                save = self.browser.find_element(
-                    By.XPATH, '//*[@id="buttons"]/ul/li[2]/a')
-                self.browser.execute_script("arguments[0].click();", save)
-                """
-                try:
-                    self.browser.switch_to.alert.accept()
-                except:
-                    pass
-                """
+                self.click(By.XPATH, '//*[@id="buttons"]/ul/li[2]/a')
                 time.sleep(1)
             except:
                 failed.append(doi)
@@ -372,3 +364,10 @@ class SciHub(AutoTask):
                    failed,
                    fmt="%s")
         self.browser.quit()
+
+    def rm_duplicate(self):
+        dois = list(set(self.dois))
+        dois.sort()
+        if len(dois[0]) == 0:
+            dois = dois[1:]
+        self.dois = dois
