@@ -74,12 +74,13 @@ class AutoTask:
                     sys.exit()
         self.flag = len(os.listdir(self.save_path))
 
-    def wait_for_click(self, by, value):
+    def click(self, by, value):
         button = self.wait.until(EC.element_to_be_clickable((by, value)))
         self.browser.execute_script("arguments[0].click();", button)
 
-    def wait_for_sendkeys(self, by, value, keys):
+    def send_keys(self, by, value, keys):
         input = self.wait.until(EC.presence_of_element_located((by, value)))
+        input.clear()
         input.send_keys(keys)
 
 
@@ -110,6 +111,8 @@ class WOS(AutoTask):
         n_refs = int(
             self.browser.find_element(By.CSS_SELECTOR,
                                       '.brand-blue').text.replace(',', ''))
+        logger.info("%s References in total" % n_refs)
+
         ii = 0
         #flag = self.flag + 1
         for start in range(1, n_refs, format_dict[self.format][1]):
@@ -118,47 +121,38 @@ class WOS(AutoTask):
             ii = ii + 2
             """
             # wait to finish
-            while len(os.listdir(self.save_path)) == flag:
+            while len(os.listdir(self.save_path)) < flag:
                 time.sleep(1)
             """
             #flag = flag + 1
         # rename
         self._rename()
-
         time.sleep(10)
         self.browser.quit()
 
     def _login(self):
-        self.browser.get('http://www.webofknowledge.com/?DestApp=WOS')
-        self.browser.find_element(By.CSS_SELECTOR, '.mat-select-arrow').click()
-        # * if you want to change the institue, change here!
-        self.browser.find_element(By.CSS_SELECTOR,
-                                  '#mat-option-9 span:nth-child(1)').click()
-        self.browser.find_element(
-            By.CSS_SELECTOR,
-            'button.wui-btn--login:nth-child(4) span:nth-child(1) span:nth-child(1)'
-        ).click()
-        login = self.browser.find_element(By.CSS_SELECTOR, '#show')
-        login.send_keys(self.institute)
-        time.sleep(0.5)
-        sel_unvi = self.browser.find_element(
-            By.CSS_SELECTOR, '.dropdown-item strong:nth-child(1)')
-        self.browser.execute_script("arguments[0].click();", sel_unvi)
-        self.browser.find_element(By.CSS_SELECTOR, '#idpSkipButton').click()
-        time.sleep(5)
-        # * If you want to have a new login page of your institue, change here
-        usr_name = self.browser.find_element(By.ID, 'username')
-        #usr_name = self.browser.find_element(By.XPATH, '//*[@id="username"]')
-        usr_name.send_keys(self.username)
-        usr_pw = self.browser.find_element(By.ID, 'password')
-        #usr_pw = self.browser.find_element(By.XPATH, '//*[@id="password"]')
-        usr_pw.send_keys(self.password)
-        self.browser.find_element(
-            By.XPATH, '//*[@id="casLoginForm"]/p[4]/button').click()
-        time.sleep(2)
-        self.browser.find_element(
-            By.XPATH, '/html/body/form/div/div[2]/p[2]/input[2]').click()
-        time.sleep(1)
+        logger.info("Start: Login")
+        try:
+
+            self.browser.get('http://www.webofknowledge.com/?DestApp=WOS')
+            self.click(By.CSS_SELECTOR, '.mat-select-arrow')
+            # * if you want to change the institue, change here!
+            self.click(By.CSS_SELECTOR, '#mat-option-9 span:nth-child(1)')
+            self.click(
+                By.CSS_SELECTOR,
+                'button.wui-btn--login:nth-child(4) span:nth-child(1) span:nth-child(1)'
+            )
+            self.send_keys(By.CSS_SELECTOR, '#show', self.institute)
+            self.click(By.CSS_SELECTOR, '.dropdown-item strong:nth-child(1)')
+            self.click(By.CSS_SELECTOR, '#idpSkipButton')
+            # * If you want to have a new login page of your institue, change here
+            self.send_keys(By.ID, 'username', self.username)
+            self.send_keys(By.ID, 'password', self.password)
+            self.click(By.XPATH, '//*[@id="casLoginForm"]/p[4]/button')
+            self.click(By.XPATH, '/html/body/form/div/div[2]/p[2]/input[2]')
+        except TimeoutError:
+            print('Timeout: Login')
+        logger.info("End: Login")
 
     def _close_popup(self):
         for ii in range(3):
@@ -173,7 +167,7 @@ class WOS(AutoTask):
                 continue
             else:
                 break
-        time.sleep(0.5)
+        time.sleep(1)
 
     def _sort(self):
         sort_dict = {
@@ -190,53 +184,56 @@ class WOS(AutoTask):
             'Usage (last 180 days): most first':
             '//*[@id="usage-count-180-descending"]'
         }
-        # Click "Sort by"
-        self.browser.find_element(
-            By.CSS_SELECTOR,
-            '.top-toolbar wos-select:nth-child(1) button:nth-child(1) span:nth-child(2)'
-        ).click()
-        sel_sort = self.browser.find_element(By.XPATH, sort_dict[self.sortby])
-        self.browser.execute_script("arguments[0].click();", sel_sort)
-        time.sleep(2)
+
+        logger.info("Start: Sorting setup")
+        try:
+            # click "Sort by"
+            self.click(
+                By.CSS_SELECTOR,
+                '.top-toolbar wos-select:nth-child(1) button:nth-child(1) span:nth-child(2)'
+            )
+            # choose
+            self.click(By.XPATH, sort_dict[self.sortby])
+        except TimeoutError:
+            print('Timeout: Sorting setup')
+        logger.info("End: Sorting setup")
 
     def _single_download(self, start, ii):
-        time.sleep(3)
-        # Click "Export"
-        export = self.browser.find_element(
-            By.XPATH,
-            '//*[@id="snRecListTop"]/app-export-menu/div/button/span[1]')
-        self.browser.execute_script("arguments[0].click();", export)
-        # Choose format
-        sel_fmt = self.browser.find_element(By.XPATH,
-                                            format_dict[self.format][0])
-        self.browser.execute_script("arguments[0].click();", sel_fmt)
-        time.sleep(1)
-        # Choose "Record from -- to --"
-        self.browser.find_element(By.XPATH,
-                                  '//*[@id="radio3"]/label/span[1]').click()
-        # input start/end id
-        self._send_id('//*[@id="mat-input-%d"]' % ii, start)
-        self._send_id('//*[@id="mat-input-%d"]' % (ii + 1),
-                      start + format_dict[self.format][1] - 1)
-        """
-        # 更改导出字段
-        self.browser.find_element(By.CSS_SELECTOR,
-                                  '.margin-top-5 button:nth-child(1)').click()
-        # 选择所需字段(excel:3完整/4自定义; txt:3完整/4完整+引文)
-        self.browser.find_element(
-            By.CSS_SELECTOR,
-            'div.wrap-mode:nth-child(3) span:nth-child(1)').click()
-        """
-        # Click "Export"
-        self.browser.find_element(
-            By.XPATH,
-            '/html/body/app-wos/div/div/main/div/div[2]/app-input-route[1]/app-export-overlay/div/div[3]/div[2]/app-export-out-details/div/div[2]/form/div/div[2]/button[1]/span[1]/span'
-        ).click()
-
-    def _send_id(self, xpath, value):
-        markto = self.browser.find_element(By.XPATH, xpath)
-        markto.clear()
-        markto.send_keys(value)
+        logger.info("Start: Download %d to %d" %
+                    (start, start + format_dict[self.format][1] - 1))
+        try:
+            # click "Export"
+            self.click(
+                By.XPATH,
+                '//*[@id="snRecListTop"]/app-export-menu/div/button/span[1]')
+            # choose format
+            self.click(By.XPATH, format_dict[self.format][0])
+            # choose "Record from -- to --"
+            self.click(By.XPATH, '//*[@id="radio3"]/label/span[1]')
+            # input start/end id
+            self.send_keys(By.XPATH, '//*[@id="mat-input-%d"]' % ii, start)
+            self.send_keys(By.XPATH, '//*[@id="mat-input-%d"]' % (ii + 1),
+                           start + format_dict[self.format][1] - 1)
+            """
+            # 更改导出字段
+            self.browser.find_element(By.CSS_SELECTOR,
+                                    '.margin-top-5 button:nth-child(1)').click()
+            # 选择所需字段(excel:3完整/4自定义; txt:3完整/4完整+引文)
+            self.browser.find_element(
+                By.CSS_SELECTOR,
+                'div.wrap-mode:nth-child(3) span:nth-child(1)').click()
+            """
+            # click "Export"
+            self.click(
+                By.XPATH,
+                '/html/body/app-wos/div/div/main/div/div[2]/app-input-route[1]/app-export-overlay/div/div[3]/div[2]/app-export-out-details/div/div[2]/form/div/div[2]/button[1]/span[1]/span'
+            )
+        except TimeoutError:
+            print('Timeout: Download %d to %d' %
+                  (start, start + format_dict[self.format][1] - 1))
+        logger.info("End: Download %d to %d" %
+                    (start, start + format_dict[self.format][1] - 1))
+        time.sleep(5)
 
     """
     def _rename_file(self, fname):
@@ -263,14 +260,16 @@ class WOS(AutoTask):
         self.suffix = suffix
 
         fname = 'refs-%06d-%06d' % (1, format_dict[self.format][1])
-        os.rename(refs_prefix + suffix,
+        os.rename(os.path.join(self.save_path, refs_prefix + suffix),
                   os.path.join(self.save_path, fname + suffix))
         for ii in range(1, n_files):
             fname = 'refs-%06d-%06d' % (
                 ii * format_dict[self.format][1],
                 (ii + 1) * format_dict[self.format][1] - 1)
-            os.rename("%s(%d)%s" % (refs_prefix, ii, suffix),
-                      os.path.join(self.save_path, fname + suffix))
+            os.rename(
+                os.path.join(self.save_path,
+                             "%s (%d)%s" % (refs_prefix, ii, suffix)),
+                os.path.join(self.save_path, fname + suffix))
 
 
 class DOIGenerator:
