@@ -4,6 +4,6 @@
     "username": 100000000000,
     "password": "Password",
     "institute": "Fake University",
-    "format": "excel",
+    "format": "txt",
     "scihub_path": "./SciHub"
 }

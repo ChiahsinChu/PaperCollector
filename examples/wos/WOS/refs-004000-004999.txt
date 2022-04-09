@@ -1,0 +1,3041 @@
+﻿FN Clarivate Analytics Web of Science
+VR 1.0
+PT J
+AU Klemens, Tomasz
+   Switlicka, Anna
+   Machura, Barbara
+   Kula, Slawomir
+   Krompiec, Stanislaw
+   Laba, Katarzyna
+   Korzec, Mateusz
+   Siwy, Mariola
+   Janeczek, Henryk
+   Schab-Balcerzak, Ewa
+   Szalkowski, Marcin
+   Grzelak, Justyna
+   Mackowski, Sebastian
+TI A family of solution processable ligands and their Re(I) complexes
+   towards light emitting applications
+SO DYES AND PIGMENTS
+VL 163
+BP 86
+EP 101
+DI 10.1016/j.dyepig.2018.11.035
+PD APR 2019
+PY 2019
+RI Szalkowski, Marcin/C-9862-2015; Mackowski, Sebastian/A-5539-2012; Grzelak, Justyna K./D-2135-2015; Szalkowski, Marcin/AAF-2480-2020; Świtlicka, Anna/Z-5546-2019; Korzec, Mateusz/AAQ-1180-2020; Schab-Balcerzak, Ewa/; Switlicka, Anna/; Laba, Katarzyna/; Siwy, Mariola/; Grzelak, Justyna/; Kula, Slawomir/; Machura, Barbara/; Janeczek, Henryk/; Mackowski, Sebastian/; Krompiec, Stanislaw/
+OI Szalkowski, Marcin/0000-0002-7514-5875; Szalkowski,
+   Marcin/0000-0002-7514-5875; Korzec, Mateusz/0000-0002-8658-1031;
+   Schab-Balcerzak, Ewa/0000-0002-7219-8664; Switlicka,
+   Anna/0000-0001-8192-5619; Laba, Katarzyna/0000-0001-7200-6768; Siwy,
+   Mariola/0000-0002-4341-1315; Grzelak, Justyna/0000-0001-7408-513X; Kula,
+   Slawomir/0000-0003-4520-1570; Machura, Barbara/0000-0001-7688-6491;
+   Janeczek, Henryk/0000-0002-5015-4337; Mackowski,
+   Sebastian/0000-0003-1560-6315; Krompiec, Stanislaw/0000-0003-3516-4235
+Z8 0
+ZS 0
+TC 15
+ZR 0
+ZB 2
+ZA 0
+Z9 15
+SN 0143-7208
+EI 1873-3743
+UT WOS:000457666300011
+ER
+
+PT J
+AU Shishkin, Maxim
+   Sato, Hirofumi
+TI Self-consistent parametrization of DFT plus U framework using linear
+   response approach: Application to evaluation of redox potentials of
+   battery cathodes
+SO PHYSICAL REVIEW B
+VL 93
+IS 8
+AR 085135
+DI 10.1103/PhysRevB.93.085135
+PD FEB 24 2016
+PY 2016
+ZS 0
+ZB 0
+Z8 0
+ZA 0
+ZR 0
+TC 27
+Z9 27
+SN 2469-9950
+EI 2469-9969
+UT WOS:000370797400003
+ER
+
+PT J
+AU Sultan, Siraj
+   Ha, Miran
+   Kim, Dong Yeon
+   Tiwari, Jitendra N.
+   Myung, Chang Woo
+   Meena, Abhishek
+   Shin, Tae Joo
+   Chae, Keun Hwa
+   Kim, Kwang S.
+TI Superb water splitting activity of the electrocatalyst Fe3Co(PO4)(4)
+   designed with computation aid
+SO NATURE COMMUNICATIONS
+VL 10
+AR 5195
+DI 10.1038/s41467-019-13050-3
+PD NOV 15 2019
+PY 2019
+RI Kim, Kwang Soo/C-7538-2012; Myung, Chang Woo/V-2298-2018; Kim, Dong Yeon/; Chae, Keun Hwa/H-2459-2016; Sultan, Siraj/
+OI Kim, Kwang Soo/0000-0002-6929-5359; Myung, Chang
+   Woo/0000-0002-9480-6982; Kim, Dong Yeon/0000-0001-7798-1108; Chae, Keun
+   Hwa/0000-0003-3894-670X; Sultan, Siraj/0000-0003-3200-7744
+TC 52
+ZR 0
+ZA 0
+ZS 0
+Z8 3
+ZB 2
+Z9 52
+SN 2041-1723
+UT WOS:000496713200008
+PM 31729366
+ER
+
+PT J
+AU Haruyama, Jun
+   Okazaki, Ken-ichi
+   Morita, Yoshiyuki
+   Nakamoto, Hirofumi
+   Matsubara, Eiichiro
+   Ikeshoji, Tamio
+   Otani, Minoru
+TI Two-Phase Reaction Mechanism for Fluorination and Defluorination in
+   Fluoride-Shuttle Batteries: A First-Principles Study
+SO ACS APPLIED MATERIALS & INTERFACES
+VL 12
+IS 1
+BP 428
+EP 435
+DI 10.1021/acsami.9b13978
+PD JAN 8 2020
+PY 2020
+RI Okazaki, Ken-ichi/O-6237-2015; Otani, Minoru/G-2270-2012
+OI Okazaki, Ken-ichi/0000-0003-0800-712X; Otani, Minoru/0000-0002-2074-2832
+Z8 0
+ZB 0
+TC 10
+ZR 0
+ZS 0
+ZA 0
+Z9 10
+SN 1944-8244
+EI 1944-8252
+UT WOS:000507146100038
+PM 31830786
+ER
+
+PT J
+AU Suzuki, Chikashi
+   Nakagiri, Toshio
+TI Investigation of SO3 adsorption and dissociation on Pt electrode
+SO SOLID STATE IONICS
+VL 179
+IS 21-26
+BP 855
+EP 861
+DI 10.1016/j.ssi.2007.12.104
+PD SEP 15 2008
+PY 2008
+CT 16th International Conference on Solid State Ionics
+CY JUL 01-06, 2007
+CL Shanghai, PEOPLES R CHINA
+SP Int Soc Solid State Ion; CAS, Shanghai Inst Ceram
+ZA 0
+ZS 0
+ZB 0
+TC 3
+ZR 0
+Z8 0
+Z9 3
+SN 0167-2738
+UT WOS:000259269100025
+ER
+
+PT J
+AU Radmilovic, Andjela
+   Smart, Tyler J.
+   Ping, Yuan
+   Choi, Kyoung-Shin
+TI Combined Experimental and Theoretical Investigations of n-Type BiFeO3
+   for Use as a Photoanode in a Photoelectrochemical Cell
+SO CHEMISTRY OF MATERIALS
+VL 32
+IS 7
+BP 3262
+EP 3270
+DI 10.1021/acs.chemmater.0c00545
+PD APR 14 2020
+PY 2020
+OI Choi, Kyoung-Shin/0000-0003-1945-8794
+ZS 0
+Z8 0
+ZB 0
+ZR 0
+ZA 0
+TC 13
+Z9 13
+SN 0897-4756
+EI 1520-5002
+UT WOS:000526394000055
+ER
+
+PT J
+AU Wang, Weizhe
+   Li, Yu
+   Feng, Yiyu
+   Han, Junkai
+   Zhang, Fei
+   Long, Peng
+   Peng, Cong
+   Cao, Chen
+   Cao, Yu
+   Yang, Hongyu
+   Feng, Wei
+TI Asymmetric self-supporting hybrid fluorinated carbon nanotubes/carbon
+   nanotubes sponge electrode for high-performance lithium-polysulfide
+   battery
+SO CHEMICAL ENGINEERING JOURNAL
+VL 349
+BP 756
+EP 765
+DI 10.1016/j.cej.2018.05.088
+PD OCT 1 2018
+PY 2018
+RI Zhang, Fei/AAS-8810-2020
+OI Zhang, Fei/0000-0001-9138-6663
+Z8 2
+ZR 0
+TC 19
+ZS 0
+ZA 0
+ZB 1
+Z9 19
+SN 1385-8947
+EI 1873-3212
+UT WOS:000437090400075
+ER
+
+PT J
+AU Sasikumar, Kiran
+   Chan, Henry
+   Narayanan, Badri
+   Sankaranarayanan, Subramanian K. R. S.
+TI Machine Learning Applied to a Variable Charge Atomistic Model for Cu/Hf
+   Binary Alloy Oxide Heterostructures
+SO CHEMISTRY OF MATERIALS
+VL 31
+IS 9
+BP 3089
+EP 3102
+DI 10.1021/acs.chemmater.8b03969
+PD MAY 14 2019
+PY 2019
+RI Sasikumar, Kiran/AAU-7734-2020; Narayanan, Badri/; Chan, Henry/
+OI Sasikumar, Kiran/0000-0001-5207-013X; Narayanan,
+   Badri/0000-0001-8147-1047; Chan, Henry/0000-0002-8198-7737
+ZR 0
+ZS 0
+ZA 0
+ZB 0
+Z8 1
+TC 6
+Z9 6
+SN 0897-4756
+EI 1520-5002
+UT WOS:000468242300004
+ER
+
+PT J
+AU Uehara, Kazuhiro
+   Miyachi, Takuya
+   Nakajima, Takahito
+   Mizuno, Noritaka
+TI Effects of Heteroatoms on Electronic States of Divanadium-Substituted
+   gamma-Keggin-type Polyoxometalates
+SO INORGANIC CHEMISTRY
+VL 53
+IS 7
+BP 3907
+EP 3918
+DI 10.1021/ic5005209
+PD APR 7 2014
+PY 2014
+RI Nakajima, Takahito/AAG-9167-2021; Nakajima, Takahito/N-5058-2015
+OI Nakajima, Takahito/0000-0001-6704-2297; 
+ZR 0
+ZB 1
+ZS 0
+TC 9
+ZA 0
+Z8 0
+Z9 9
+SN 0020-1669
+EI 1520-510X
+UT WOS:000334092500079
+PM 24673422
+ER
+
+PT J
+AU Li, Yanmei
+   Pan, Jingjing
+   Wu, Jinzhu
+   Yi, Tingfeng
+   Xie, Ying
+TI Mesoporous NiCo2O4 nanoneedles@MnO2 nanoparticles grown on nickel foam
+   for electrode used in high-performance supercapacitors
+SO JOURNAL OF ENERGY CHEMISTRY
+VL 31
+BP 167
+EP 177
+DI 10.1016/j.jechem.2018.06.009
+PD APR 2019
+PY 2019
+RI Yi, Ting-Feng/F-4594-2012
+OI Yi, Ting-Feng/0000-0002-4228-6874
+ZB 2
+ZA 0
+ZR 0
+Z8 2
+TC 24
+ZS 0
+Z9 26
+SN 2095-4956
+UT WOS:000460174000021
+ER
+
+PT J
+AU Sahoo, Prangya P.
+   Zoellner, Brandon
+   Maggard, Paul A.
+TI Optical, electronic, and photoelectrochemical properties of the p-type
+   Cu3-xVO4 semiconductor
+SO JOURNAL OF MATERIALS CHEMISTRY A
+VL 3
+IS 8
+BP 4501
+EP 4509
+DI 10.1039/c4ta04876h
+PD 2015
+PY 2015
+RI Sahoo, Prangya P/I-1834-2014; Maggard, Paul/
+OI Sahoo, Prangya P/0000-0002-8914-2560; Maggard, Paul/0000-0002-3909-1590
+ZS 0
+ZA 0
+ZR 0
+TC 46
+Z8 0
+ZB 1
+Z9 46
+SN 2050-7488
+EI 2050-7496
+UT WOS:000349667700048
+ER
+
+PT J
+AU Pan, Yanjun
+   Li, Yang
+   Luo, Jinda
+   Wang, Xianyou
+   Yang, Zhenhua
+TI Atomic insights into regulation of graphene sheets vertically attached
+   to the FeF3 center dot 0.33H(2)O (002) surface by cation doping
+SO CURRENT APPLIED PHYSICS
+VL 19
+IS 10
+BP 1103
+EP 1110
+DI 10.1016/j.cap.2019.07.001
+PD OCT 2019
+PY 2019
+TC 0
+ZS 0
+ZB 0
+Z8 0
+ZR 0
+ZA 0
+Z9 0
+SN 1567-1739
+EI 1878-1675
+UT WOS:000477564100007
+ER
+
+PT J
+AU Asadi, Najmeh
+   Ramezanzadeh, Mohammad
+   Bahlakeh, Ghasem
+   Ramezanzadeh, Bahram
+TI Utilizing Lemon Balm extract as an effective green corrosion inhibitor
+   for mild steel in 1M HCl solution: A detailed experimental, molecular
+   dynamics, Monte Carlo and quantum mechanics study
+SO JOURNAL OF THE TAIWAN INSTITUTE OF CHEMICAL ENGINEERS
+VL 95
+BP 252
+EP 272
+DI 10.1016/j.jtice.2018.07.011
+PD FEB 2019
+PY 2019
+RI Ramezanzadeh, Bahram/T-4214-2019; Ramezanzadeh karati, Mohammad/AAQ-5791-2020; Bahlakeh, Ghasem/AAE-1936-2020; , Ghasem/
+OI Ramezanzadeh, Bahram/0000-0003-4283-8197; Ramezanzadeh karati,
+   Mohammad/0000-0001-9541-1184; , Ghasem/0000-0003-4537-5642
+Z8 1
+TC 152
+ZB 7
+ZR 0
+ZA 0
+ZS 0
+Z9 153
+SN 1876-1070
+EI 1876-1089
+UT WOS:000458942000029
+ER
+
+PT J
+AU Tang, Shaobin
+   Zhou, Xunhui
+   Zhang, Shiyong
+   Li, Xiaokang
+   Yang, Tongtong
+   Hu, Wei
+   Jiang, Jun
+   Luo, Yi
+TI Metal-Free Boron Nitride Nanoribbon Catalysts for Electrochemical CO2
+   Reduction: Combining High Activity and Selectivity
+SO ACS APPLIED MATERIALS & INTERFACES
+VL 11
+IS 1
+BP 906
+EP 915
+DI 10.1021/acsami.8b18505
+PD JAN 9 2019
+PY 2019
+RI Luo, Yi/B-1449-2009; jiang, jun/P-5378-2014; Yang, Tongtong/P-8968-2019
+OI Luo, Yi/0000-0003-0007-0394; jiang, jun/0000-0002-6116-5605; 
+TC 36
+ZA 0
+ZB 5
+Z8 2
+ZS 0
+ZR 0
+Z9 37
+SN 1944-8244
+EI 1944-8252
+UT WOS:000455561200095
+PM 30525373
+ER
+
+PT J
+AU Beltran, Saul Perez
+   Balbuena, Perla B.
+TI Formation of Multilayer Graphene Domains with Strong Sulfur-Carbon
+   Interaction and Enhanced Sulfur Reduction Zones for Lithium-Sulfur
+   Battery Cathodes
+SO CHEMSUSCHEM
+VL 11
+IS 12
+SI SI
+BP 1970
+EP 1980
+DI 10.1002/cssc.201702446
+PD JUN 22 2018
+PY 2018
+ZR 0
+ZS 0
+ZB 1
+Z8 1
+TC 28
+ZA 0
+Z9 28
+SN 1864-5631
+EI 1864-564X
+UT WOS:000435934200011
+PM 29432670
+ER
+
+PT J
+AU Yan, SH
+   Bu, YX
+   Cukier, RI
+TI Electron bridging dihydrogen bond in the imidazole-contained anion
+   derivatives
+SO JOURNAL OF CHEMICAL PHYSICS
+VL 124
+IS 12
+AR 124314
+DI 10.1063/1.2173255
+PD MAR 28 2006
+PY 2006
+Z8 1
+ZA 0
+ZB 0
+ZR 0
+TC 10
+ZS 0
+Z9 10
+SN 0021-9606
+EI 1089-7690
+UT WOS:000236464000028
+PM 16599681
+ER
+
+PT J
+AU Nasara, Ralph Nicolai
+   Ma, Wen
+   Kondo, Yasuyuki
+   Miyazaki, Kohei
+   Miyahara, Yuto
+   Fukutsuka, Tomokazu
+   Lin, Che-an
+   Lin, Shih-kang
+   Abe, Takeshi
+TI Charge-Transfer Kinetics of The Solid-Electrolyte Interphase on
+   Li(4)Ti(5)O(12)Thin-Film Electrodes
+SO CHEMSUSCHEM
+VL 13
+IS 16
+BP 4041
+EP 4050
+DI 10.1002/cssc.202001086
+EA JUL 2020
+PD AUG 21 2020
+PY 2020
+RI Fukutsuka, Tomokazu/F-2918-2010; Miyazaki, Kohei/E-4631-2010; Abe, Takeshi/F-2544-2010; Nasara, Ralph Nicolai/; Lin, Shih-kang/; MIYAHARA, Yuto/
+OI Fukutsuka, Tomokazu/0000-0002-8731-9078; Miyazaki,
+   Kohei/0000-0001-5177-3570; Abe, Takeshi/0000-0002-1515-8340; Nasara,
+   Ralph Nicolai/0000-0003-4853-7387; Lin, Shih-kang/0000-0002-0832-3213;
+   MIYAHARA, Yuto/0000-0003-4662-0996
+TC 14
+Z8 0
+ZS 0
+ZA 0
+ZB 0
+ZR 0
+Z9 14
+SN 1864-5631
+EI 1864-564X
+UT WOS:000553646100001
+PM 32666624
+ER
+
+PT J
+AU Lv, Xingshuai
+   Wei, Wei
+   Sun, Qilong
+   Yu, Lin
+   Huang, Baibiao
+   Dai, Ying
+TI Sc2C as a Promising Anode Material with High Mobility and Capacity: A
+   First-Principles Study
+SO CHEMPHYSCHEM
+VL 18
+IS 12
+BP 1627
+EP 1634
+DI 10.1002/cphc.201700181
+PD JUN 20 2017
+PY 2017
+RI Huang, baibiao/C-1857-2008; SUN, QILONG/; dai, ying/
+OI Huang, baibiao/0000-0002-0416-944X; SUN, QILONG/0000-0001-6266-285X;
+   dai, ying/0000-0002-4503-9828
+ZB 0
+ZS 0
+Z8 0
+ZR 0
+TC 54
+ZA 0
+Z9 54
+SN 1439-4235
+EI 1439-7641
+UT WOS:000403885800018
+PM 28383808
+ER
+
+PT J
+AU Chitumalla, Ramesh Kumar
+   Gupta, Kankatala S. V.
+   Malapaka, Chandrasekhram
+   Fallahpour, Reza
+   Islam, Ashraful
+   Han, Liyuan
+   Kotamarthi, Bhanuprakash
+   Singh, Surya Prakash
+TI Thiocyanate-free cyclometalated ruthenium(II) sensitizers for DSSC: A
+   combined experimental and theoretical investigation
+SO PHYSICAL CHEMISTRY CHEMICAL PHYSICS
+VL 16
+IS 6
+BP 2630
+EP 2640
+DI 10.1039/c3cp53613k
+PD 2014
+PY 2014
+RI Chitumalla, Ramesh Kumar/I-3799-2013; ISLAM, Ashraful/H-2973-2011; liyuan, HAN/K-3604-2014; Han, Liyuan/O-2856-2019
+OI Chitumalla, Ramesh Kumar/0000-0002-9523-7056; ISLAM,
+   Ashraful/0000-0002-1633-1432; Han, Liyuan/0000-0001-9766-9015
+ZR 0
+Z8 0
+ZB 5
+ZA 0
+TC 41
+ZS 0
+Z9 41
+SN 1463-9076
+EI 1463-9084
+UT WOS:000329926700044
+PM 24382430
+ER
+
+PT J
+AU Dai, Yuehua
+   Li, Xing
+   Yang, Bin
+   Shao, Peng
+   Wang, Xiaoqing
+   Yang, Fei
+TI Effect of doping on the GR/MoS2/GR selector: first-principle
+   calculations
+SO NANOTECHNOLOGY
+VL 32
+IS 19
+AR 195204
+DI 10.1088/1361-6528/abe3b5
+PD MAY 7 2021
+PY 2021
+ZS 0
+TC 1
+Z8 0
+ZB 0
+ZR 0
+ZA 0
+Z9 1
+SN 0957-4484
+EI 1361-6528
+UT WOS:000620518600001
+PM 33545693
+ER
+
+PT J
+AU Zhou, Huanhuan
+   Wang, Jingfan
+   Wang, Mingchao
+   Lin, Shangchao
+TI Competing Dissolution Pathways and Ligand Passivation-Enhanced
+   Interfacial Stability of Hybrid Perovskites with Liquid Water
+SO ACS APPLIED MATERIALS & INTERFACES
+VL 12
+IS 20
+BP 23584
+EP 23594
+DI 10.1021/acsami.0c03532
+PD MAY 20 2020
+PY 2020
+OI Wang, Mingchao/0000-0002-4246-0254
+ZA 0
+ZB 0
+TC 7
+ZS 0
+Z8 0
+ZR 0
+Z9 7
+SN 1944-8244
+EI 1944-8252
+UT WOS:000537394100121
+PM 32326693
+ER
+
+PT J
+AU Ren, Y.
+   Qi, Z.
+   Ma, X.
+   Yang, S.
+   Zhang, C.
+   Tan, X.
+   Liu, X.
+TI First-principles study of the effect of mechanical strength on ion
+   transport in La-doped LiF-SEI on the Li (001) surface
+SO MATERIALS TODAY CHEMISTRY
+VL 20
+AR 100451
+DI 10.1016/j.mtchem.2021.100451
+EA MAR 2021
+PD JUN 2021
+PY 2021
+RI Ren, Yuan/K-5012-2018; Ren, Yuan/AAT-7874-2021
+OI Ren, Yuan/0000-0003-0340-306X; Ren, Yuan/0000-0003-0340-306X
+TC 2
+ZS 0
+ZR 0
+ZB 0
+Z8 0
+ZA 0
+Z9 2
+SN 2468-5194
+UT WOS:000663598900012
+ER
+
+PT J
+AU Lai, W
+   Haile, SM
+TI Impedance spectroscopy as a tool for chemical and electrochemical
+   analysis of mixed conductors: A case study of ceria
+SO JOURNAL OF THE AMERICAN CERAMIC SOCIETY
+VL 88
+IS 11
+BP 2979
+EP 2997
+DI 10.1111/j.1551-2916.2005.00740.x
+PD NOV 2005
+PY 2005
+RI Lai, Wei/E-8942-2011; Haile, Sossina M/I-3448-2015
+OI Lai, Wei/0000-0002-9258-5573; 
+ZR 0
+ZB 10
+ZS 2
+Z8 3
+TC 282
+ZA 0
+Z9 283
+SN 0002-7820
+EI 1551-2916
+UT WOS:000232773100001
+ER
+
+PT J
+AU Chen, Juner
+   Liu, Tingyu
+   Gao, Lina
+   Qian, Yumin
+   Liu, Yaqin
+   Kong, Xueqian
+TI Tuning the solution structure of electrolyte for optimal
+   solid-electrolyte-interphase formation in high-voltage lithium metal
+   batteries
+SO JOURNAL OF ENERGY CHEMISTRY
+VL 60
+BP 178
+EP 185
+DI 10.1016/j.jechem.2021.01.007
+EA FEB 2021
+PD SEP 2021
+PY 2021
+RI Kong, Xueqian/P-3152-2018
+OI Kong, Xueqian/0000-0002-1901-9073
+Z8 0
+ZA 0
+TC 10
+ZB 0
+ZS 0
+ZR 0
+Z9 10
+SN 2095-4956
+UT WOS:000643887500007
+ER
+
+PT J
+AU Chen, Bochao
+   Qin, Hongye
+   Li, Kai
+   Zhang, Biao
+   Liu, Enzuo
+   Zhao, Naiqin
+   Shi, Chunsheng
+   He, Chunnian
+TI Yolk-shelled Sb@C nanoconfined nitrogen/sulfur co-doped 3D porous carbon
+   microspheres for sodium-ion battery anode with ultralong high-rate
+   cycling
+SO NANO ENERGY
+VL 66
+AR 104133
+DI 10.1016/j.nanoen.2019.104133
+PD DEC 2019
+PY 2019
+ZR 0
+ZB 1
+Z8 3
+ZS 0
+ZA 0
+TC 37
+Z9 37
+SN 2211-2855
+EI 2211-3282
+UT WOS:000503062400053
+ER
+
+PT J
+AU Muresan, Nicoleta
+   Chlopek, Krzysztof
+   Weyhermuller, Thomas
+   Neese, Frank
+   Wieghardt, Karl
+TI Bis(alpha-diimine)nickel complexes: Molecular and electronic structure
+   of three members of the electron-transfer series [Ni(L)(2)](z) (z=0, 1+,
+   2+) (L=2-phenyl-1,4-bis(isopropyl)-1,4-diazabutadiene). A combined
+   experimental and theoretical study
+SO INORGANIC CHEMISTRY
+VL 46
+IS 13
+BP 5327
+EP 5337
+DI 10.1021/ic700407m
+PD JUN 25 2007
+PY 2007
+RI Neese, Frank/J-4959-2014; Weyhermüller, Thomas/G-6730-2012; Wieghardt, Karl/B-4179-2014
+OI Neese, Frank/0000-0003-4691-0547; Weyhermüller,
+   Thomas/0000-0002-0399-7999; Wieghardt, Karl/0000-0003-0600-7855
+Z8 1
+ZR 0
+TC 97
+ZA 0
+ZS 0
+ZB 2
+Z9 98
+SN 0020-1669
+EI 1520-510X
+UT WOS:000247304600031
+PM 17530843
+ER
+
+PT J
+AU Shemella, Philip
+   Pereira, Brian
+   Zhang, Yiming
+   Van Roey, Patrick
+   Belfort, Georges
+   Garde, Shekhar
+   Nayak, Saroj K.
+TI Mechanism for intein C-terminal cleavage: A proposal from quantum
+   mechanical calculations
+SO BIOPHYSICAL JOURNAL
+VL 92
+IS 3
+BP 847
+EP 853
+DI 10.1529/biophysj.106.092049
+PD FEB 2007
+PY 2007
+RI Garde, Shekhar/C-3060-2008
+ZS 0
+ZR 0
+ZB 19
+TC 30
+ZA 0
+Z8 0
+Z9 30
+SN 0006-3495
+EI 1542-0086
+UT WOS:000243397000011
+PM 17085503
+ER
+
+PT J
+AU Wang, Xiuwen
+   Batter, Buhe
+   Xie, Ying
+   Pan, Kai
+   Liao, Yongping
+   Lv, Chunmei
+   Li, Mingxia
+   Sui, Siyu
+   Fu, Honggang
+TI Highly crystalline, small sized, monodisperse alpha-NiS nanocrystal ink
+   as an efficient counter electrode for dye-sensitized solar cells
+SO JOURNAL OF MATERIALS CHEMISTRY A
+VL 3
+IS 31
+BP 15905
+EP 15912
+DI 10.1039/c5ta02946e
+PD 2015
+PY 2015
+RI Fu, Honggang/C-5616-2018
+ZS 0
+ZR 0
+ZB 2
+TC 54
+Z8 4
+ZA 0
+Z9 56
+SN 2050-7488
+EI 2050-7496
+UT WOS:000358722200014
+ER
+
+PT J
+AU Ananthaneni, Sahithi
+   Rankin, Rees B.
+TI Computational screening of transition metal/p-block hybrid
+   electrocatalysts for CO2 reduction
+SO JOURNAL OF COMPUTATIONAL CHEMISTRY
+VL 41
+IS 14
+BP 1384
+EP 1394
+DI 10.1002/jcc.26182
+EA FEB 2020
+PD MAY 30 2020
+PY 2020
+ZR 0
+ZS 0
+TC 1
+ZA 0
+ZB 0
+Z8 0
+Z9 1
+SN 0192-8651
+EI 1096-987X
+UT WOS:000516015800001
+PM 32100900
+ER
+
+PT J
+AU Smart, Tyler J.
+   Cardiel, Allison C.
+   Wu, Feng
+   Choi, Kyoung-Shin
+   Ping, Yuan
+TI Mechanistic insights of enhanced spin polaron conduction in CuO through
+   atomic doping
+SO NPJ COMPUTATIONAL MATERIALS
+VL 4
+AR 61
+DI 10.1038/s41524-018-0118-3
+PD NOV 19 2018
+PY 2018
+RI Wu, Feng/R-3002-2018; Choi, Kyoung-Shin/
+OI Wu, Feng/0000-0003-1652-9243; Choi, Kyoung-Shin/0000-0003-1945-8794
+ZR 0
+ZS 0
+Z8 1
+ZA 0
+ZB 1
+TC 17
+Z9 17
+EI 2057-3960
+UT WOS:000450566100001
+ER
+
+PT J
+AU Chaabene, Marwa
+   Gassoumi, Bouzid
+   Mignon, Pierre
+   Ben Chaabane, Rafik
+   Allouche, Abdul-Rahman
+TI New zinc phthalocyanine derivatives for nitrogen dioxide sensors: A
+   theoretical optoelectronic investigation
+SO JOURNAL OF MOLECULAR GRAPHICS & MODELLING
+VL 88
+BP 174
+EP 182
+DI 10.1016/j.jmgm.2019.01.008
+PD MAY 2019
+PY 2019
+RI ALLOUCHE, Abdul-Rahman/A-8005-2008
+OI ALLOUCHE, Abdul-Rahman/0000-0003-0725-4057
+ZA 0
+TC 13
+Z8 0
+ZR 1
+ZB 3
+ZS 0
+Z9 14
+SN 1093-3263
+EI 1873-4243
+UT WOS:000462693500017
+PM 30708284
+ER
+
+PT J
+AU Sikorska, Celina
+   Gaston, Nicola
+TI N4Mg6M (M = Li, Na, K) superalkalis for CO(2)activation
+SO JOURNAL OF CHEMICAL PHYSICS
+VL 153
+IS 14F
+AR 144301
+DI 10.1063/5.0025545
+PD OCT 14 2020
+PY 2020
+RI Gaston, Nicola/; Sikorska, Celina/R-9755-2017
+OI Gaston, Nicola/0000-0001-8049-3295; Sikorska, Celina/0000-0002-8288-166X
+TC 6
+ZA 0
+ZR 0
+ZB 1
+ZS 0
+Z8 0
+Z9 6
+SN 0021-9606
+EI 1089-7690
+UT WOS:000577510900001
+PM 33086817
+ER
+
+PT J
+AU Chawla, Harshita
+   Saha, Meghna
+   Upadhyay, Sumant
+   Rohilla, Jyoti
+   Ingole, Pravin Popinand
+   Sapi, Andras
+   Szenti, Imre
+   Yadav, Mohit
+   Lebedev, Vasily T.
+   Chandra, Amrish
+   Garg, Seema
+TI Enhanced photocatalytic activity and easy recovery of visible light
+   active MoSe2/BiVO4 heterojunction immobilized on Luffa cylindrica -
+   experimental and DFT study
+SO ENVIRONMENTAL SCIENCE-NANO
+VL 8
+IS 10
+BP 3028
+EP 3041
+DI 10.1039/d1en00578b
+EA AUG 2021
+PD OCT 14 2021
+PY 2021
+RI Garg, Seema/AAD-1509-2021; Szenti, Imre/ABB-1610-2021; Yadav, Mohit/; Chawla, Harshita/
+OI Garg, Seema/0000-0002-0045-557X; Szenti, Imre/0000-0002-4602-808X;
+   Yadav, Mohit/0000-0002-1248-0991; Chawla, Harshita/0000-0003-1114-9372
+ZA 0
+TC 0
+ZR 0
+ZS 0
+Z8 0
+ZB 0
+Z9 0
+SN 2051-8153
+EI 2051-8161
+UT WOS:000695851300001
+ER
+
+PT J
+AU Dehghani, Ali
+   Bahlakeh, Ghasem
+   Ramezanzadeh, Bahram
+   Ramezanzadeh, Mohammad
+TI Potential of Borage flower aqueous extract as an environmentally
+   sustainable corrosion inhibitor for acid corrosion of mild steel:
+   Electrochemical and theoretical studies
+SO JOURNAL OF MOLECULAR LIQUIDS
+VL 277
+BP 895
+EP 911
+DI 10.1016/j.molliq.2019.01.008
+PD MAR 1 2019
+PY 2019
+RI Bahlakeh, Ghasem/AAE-1936-2020; Ramezanzadeh karati, Mohammad/AAQ-5791-2020; Ramezanzadeh, Bahram/T-4214-2019; , Ghasem/
+OI Ramezanzadeh karati, Mohammad/0000-0001-9541-1184; Ramezanzadeh,
+   Bahram/0000-0003-4283-8197; , Ghasem/0000-0003-4537-5642
+Z8 0
+ZS 0
+ZA 0
+TC 110
+ZB 5
+ZR 0
+Z9 111
+SN 0167-7322
+EI 1873-3166
+UT WOS:000460845900099
+ER
+
+PT J
+AU Nunes, Willian G.
+   Miranda, Andre N.
+   Freitas, Bruno
+   Vicentini, Rafael
+   Oliveira, Aline C.
+   Doubek, Gustavo
+   Freitas, Renato G.
+   Da Silva, Leonardo M.
+   Zanin, Hudson
+TI Charge-storage mechanism of highly defective NiO nanostructures on
+   carbon nanofibers in electrochemical supercapacitors
+SO NANOSCALE
+VL 13
+IS 21
+BP 9590
+EP 9605
+DI 10.1039/d1nr00065a
+EA APR 2021
+PD JUN 7 2021
+PY 2021
+RI Doubek, Gustavo/AAG-9588-2020; Freitas, Bruno/; Vicentini, Rafael/; Zanin, Hudson/A-8408-2015; Miranda, Andre Navarro de/; Nunes, Willian/
+OI Doubek, Gustavo/0000-0001-9349-4801; Freitas, Bruno/0000-0001-5718-2931;
+   Vicentini, Rafael/0000-0001-6906-8669; Zanin,
+   Hudson/0000-0002-7295-4378; Miranda, Andre Navarro
+   de/0000-0002-2176-4099; Nunes, Willian/0000-0002-2923-3647
+ZS 0
+ZA 0
+Z8 0
+ZB 0
+ZR 0
+TC 3
+Z9 3
+SN 2040-3364
+EI 2040-3372
+UT WOS:000649533300001
+PM 33978661
+ER
+
+PT J
+AU Li, Ying-Sing
+   Lu, Weijie
+   Wang, Yu
+   Tran, Tuan
+TI Studies of (3-mercaptopropyl)trimethoxylsilane and
+   bis(trimethoxysilyl)ethane sol-gel coating on copper and aluminum
+SO SPECTROCHIMICA ACTA PART A-MOLECULAR AND BIOMOLECULAR SPECTROSCOPY
+VL 73
+IS 5
+BP 922
+EP 928
+DI 10.1016/j.saa.2009.04.016
+PD SEP 1 2009
+PY 2009
+RI Li, Ying S/E-5364-2011
+ZR 0
+TC 50
+ZS 0
+ZB 3
+Z8 5
+ZA 0
+Z9 53
+SN 1386-1425
+UT WOS:000268009400022
+PM 19464230
+ER
+
+PT J
+AU Guan, Daqin
+   Zhang, Kaifeng
+   Hu, Zhiwei
+   Wu, Xinhao
+   Chen, Jeng-Lung
+   Pao, Chih-Wen
+   Guo, Yanan
+   Zhou, Wei
+   Shao, Zongping
+TI Exceptionally Robust Face-Sharing Motifs Enable Efficient and Durable
+   Water Oxidation
+SO ADVANCED MATERIALS
+VL 33
+IS 41
+AR 2103392
+DI 10.1002/adma.202103392
+EA AUG 2021
+PD OCT 2021
+PY 2021
+RI Shao, Zongping/AAY-8177-2020; 周嵬/B-1083-2012; shao, zongping/B-5250-2013; Guan, Daqin/; shao, zongping/
+OI 周嵬/0000-0003-0322-095X; Guan, Daqin/0000-0001-5393-2301; shao,
+   zongping/0000-0002-4538-4218
+ZS 0
+ZR 0
+ZB 1
+ZA 0
+Z8 0
+TC 3
+Z9 3
+SN 0935-9648
+EI 1521-4095
+UT WOS:000688529200001
+PM 34436805
+ER
+
+PT J
+AU Wang, Rui-Ning
+   Dong, Guo-Yi
+   Wang, Shu-Fang
+   Fu, Guang-Sheng
+   Wang, Jiang-Long
+TI Thermoelectric properties of fullerene-based junctions: a
+   first-principles study
+SO PHYSICAL CHEMISTRY CHEMICAL PHYSICS
+VL 18
+IS 40
+BP 28117
+EP 28124
+DI 10.1039/c6cp04339a
+PD OCT 28 2016
+PY 2016
+Z8 0
+ZA 0
+ZR 0
+ZB 0
+TC 3
+ZS 0
+Z9 3
+SN 1463-9076
+EI 1463-9084
+UT WOS:000385180600046
+PM 27711504
+ER
+
+PT J
+AU Szilvasi, Tibor
+   Yu, Huaizhe
+   Gold, Jake, I
+   Bao, Nanqi
+   Wolter, Trenton J.
+   Twieg, Robert J.
+   Abbott, Nicholas L.
+   Mavrikakis, Manos
+TI Coupling the chemical reactivity of bimetallic surfaces to the
+   orientations of liquid crystals
+SO MATERIALS HORIZONS
+VL 8
+IS 7
+BP 2050
+EP 2056
+DI 10.1039/d1mh00035g
+EA MAY 2021
+PD JUL 1 2021
+PY 2021
+RI Mavrikakis, Manos/D-5702-2012; Bao, Nanqi/; Yu, Huaizhe/; Wolter, Trenton/
+OI Mavrikakis, Manos/0000-0002-5293-5356; Bao, Nanqi/0000-0002-4277-0738;
+   Yu, Huaizhe/0000-0001-5974-6171; Wolter, Trenton/0000-0002-5194-359X
+TC 0
+ZA 0
+Z8 0
+ZS 0
+ZB 0
+ZR 0
+Z9 0
+SN 2051-6347
+EI 2051-6355
+UT WOS:000655663200001
+PM 34846482
+ER
+
+PT J
+AU Anitha, E. Gladis
+   Vedhagiri, S. Joseph
+   Parimala, K.
+TI Spectroscopic (FT-IR, FT-Raman and UV-Visible) investigations, NMR
+   chemical shielding anisotropy (CSA) parameters of
+   2,6-Diainino-4-chloropyrimidine for dye sensitized solar cells using
+   density functional theory
+SO SPECTROCHIMICA ACTA PART A-MOLECULAR AND BIOMOLECULAR SPECTROSCOPY
+VL 136
+BP 1557
+EP 1568
+DI 10.1016/j.saa.2014.10.049
+PN C
+PD FEB 5 2015
+PY 2015
+Z8 0
+ZA 0
+ZR 0
+ZS 0
+ZB 1
+TC 4
+Z9 4
+SN 1386-1425
+EI 1873-3557
+UT WOS:000347583300040
+PM 25459717
+ER
+
+PT J
+AU Zhou, Xingyi
+   Chen, Xianfei
+   Shu, Chaozhu
+   Huang, Yi
+   Xiao, Beibei
+   Zhang, Wentao
+   Wang, Lianli
+TI Two-Dimensional Boron-Rich Monolayer BxN as High Capacity for
+   Lithium-Ion Batteries: A First-Principles Study
+SO ACS APPLIED MATERIALS & INTERFACES
+VL 13
+IS 34
+BP 41169
+EP 41181
+DI 10.1021/acsami.1c08331
+EA AUG 2021
+PD SEP 1 2021
+PY 2021
+RI wang, lianli/ABC-2131-2020; Hu, Anjun/
+OI wang, lianli/0000-0001-8615-8201; Hu, Anjun/0000-0003-4025-0330
+ZS 0
+ZB 0
+Z8 0
+ZR 0
+TC 1
+ZA 0
+Z9 1
+SN 1944-8244
+EI 1944-8252
+UT WOS:000693050200096
+PM 34420295
+ER
+
+PT J
+AU Wang, Xiuwen
+   Xie, Ying
+   Bateer, Buhe
+   Pan, Kai
+   Zhou, Yangtao
+   Zhang, Yi
+   Wang, Guofeng
+   Zhou, Wei
+   Fu, Honggang
+TI Hexagonal FeS nanosheets with high-energy (001) facets: Counter
+   electrode materials superior to platinum for dye-sensitized solar cells
+SO NANO RESEARCH
+VL 9
+IS 10
+BP 2862
+EP 2874
+DI 10.1007/s12274-016-1172-0
+PD OCT 2016
+PY 2016
+RI Zhou, Wei/C-9816-2018; Fu, Honggang/C-5616-2018
+OI Zhou, Wei/0000-0002-2818-0408; 
+ZS 0
+ZR 0
+Z8 5
+ZB 3
+ZA 0
+TC 30
+Z9 31
+SN 1998-0124
+EI 1998-0000
+UT WOS:000385194100003
+ER
+
+PT J
+AU Hu, Tao
+   Sun, Xiang
+   Sun, Hongtao
+   Xin, Guoqing
+   Shao, Dali
+   Liu, Changsheng
+   Lian, Jie
+TI Rapid synthesis of nitrogen-doped graphene for a lithium ion battery
+   anode with excellent rate performance and super-long cyclic stability
+SO PHYSICAL CHEMISTRY CHEMICAL PHYSICS
+VL 16
+IS 3
+BP 1060
+EP 1066
+DI 10.1039/c3cp54494j
+PD 2014
+PY 2014
+RI Sun, Hongtao/N-6597-2013; Shao, Dali/J-5870-2014
+OI Sun, Hongtao/0000-0003-3259-6091; 
+TC 122
+ZA 0
+ZB 4
+ZR 0
+Z8 7
+ZS 0
+Z9 122
+SN 1463-9076
+EI 1463-9084
+UT WOS:000328643900028
+PM 24287587
+ER
+
+PT J
+AU Li, Dongzhe
+   Frauenheim, Thomas
+   He, Junjie
+TI Robust Giant Magnetoresistance in 2D Van der Waals Molecular Magnetic
+   Tunnel Junctions
+SO ACS APPLIED MATERIALS & INTERFACES
+VL 13
+IS 30
+BP 36098
+EP 36105
+DI 10.1021/acsami.1c10673
+EA JUL 2021
+PD AUG 4 2021
+PY 2021
+RI He, Junjie/R-7141-2018
+OI He, Junjie/0000-0001-6447-7893
+Z8 0
+ZB 0
+ZR 0
+TC 2
+ZS 0
+ZA 0
+Z9 2
+SN 1944-8244
+EI 1944-8252
+UT WOS:000683741400082
+PM 34308645
+ER
+
+PT J
+AU Shin, Homin
+   Liu, Xiangyang
+   Lacelle, Thomas
+   MacDonell, Ryan J.
+   Schuurman, Michael S.
+   Malenfant, Patrick R. L.
+   Paquet, Chantal
+TI Mechanistic Insight into Bis(amino) Copper Formate Thermochemistry for
+   Conductive Molecular Ink Design
+SO ACS APPLIED MATERIALS & INTERFACES
+VL 12
+IS 29
+BP 33039
+EP 33049
+DI 10.1021/acsami.0c08645
+PD JUL 22 2020
+PY 2020
+RI Schuurman, Michael/ABG-7527-2021; Lacelle, Thomas/; MacDonell, Ryan/
+OI Lacelle, Thomas/0000-0002-4224-8413; MacDonell, Ryan/0000-0002-0459-9546
+ZR 0
+ZB 0
+Z8 0
+TC 3
+ZA 0
+ZS 0
+Z9 3
+SN 1944-8244
+EI 1944-8252
+UT WOS:000555417200083
+PM 32589833
+ER
+
+PT J
+AU Feng, Jianrui
+   Lv, Fan
+   Zhang, Weiyu
+   Li, Peihao
+   Wang, Kai
+   Yang, Chao
+   Wang, Bin
+   Yang, Yong
+   Zhou, Jinhui
+   Lin, Fei
+   Wang, Gui-Chang
+   Guo, Shaojun
+TI Iridium-Based Multimetallic Porous Hollow Nanocrystals for Efficient
+   Overall-Water-Splitting Catalysis
+SO ADVANCED MATERIALS
+VL 29
+IS 47
+AR 1703798
+DI 10.1002/adma.201703798
+PD DEC 20 2017
+PY 2017
+RI Guo, Shaojun/A-8449-2011; Wang, Kai/AAG-3471-2020; Feng, Jianrui/M-9509-2018; Yang, Chao/
+OI Guo, Shaojun/0000-0002-5941-414X; Wang, Kai/0000-0002-1271-2094; Feng,
+   Jianrui/0000-0001-6085-935X; Yang, Chao/0000-0003-1202-6892
+ZR 0
+ZB 13
+TC 261
+ZA 0
+Z8 12
+ZS 0
+Z9 262
+SN 0935-9648
+EI 1521-4095
+UT WOS:000418068700012
+PM 29083497
+ER
+
+PT J
+AU Zheng, Xin
+   Sun, Yihui
+   Yan, Xiaoqin
+   Sun, Xu
+   Zhang, Guangjie
+   Zhang, Qian
+   Jiang, Yaru
+   Gao, Wenchao
+   Zhang, Yue
+TI High carrier concentration ZnO nanowire arrays for binder-free
+   conductive support of supercapacitors electrodes by Al doping
+SO JOURNAL OF COLLOID AND INTERFACE SCIENCE
+VL 484
+BP 155
+EP 161
+DI 10.1016/j.jcis.2016.08.070
+PD DEC 15 2016
+PY 2016
+RI Zhang, Qian/AAO-9963-2020; Zhang, Yue/J-8372-2012; Gao, Wenchao/AAD-8949-2022
+OI Zhang, Qian/0000-0002-1774-9726; Zhang, Yue/0000-0002-8213-1420; 
+TC 18
+ZA 0
+ZR 0
+ZS 0
+ZB 0
+Z8 1
+Z9 18
+SN 0021-9797
+EI 1095-7103
+UT WOS:000385690200018
+PM 27610470
+ER
+
+PT J
+AU Sproules, Stephen
+   Weyhermueller, Thomas
+   Goddard, Richard
+   Wieghardt, Karl
+TI The Rhenium Tris(dithiolene) Electron Transfer Series: Calibrating
+   Covalency
+SO INORGANIC CHEMISTRY
+VL 50
+IS 24
+BP 12623
+EP 12631
+DI 10.1021/ic2016534
+PD DEC 19 2011
+PY 2011
+RI Wieghardt, Karl/B-4179-2014; Weyhermüller, Thomas/G-6730-2012
+OI Wieghardt, Karl/0000-0003-0600-7855; Weyhermüller,
+   Thomas/0000-0002-0399-7999
+ZR 0
+ZA 0
+Z8 0
+ZS 0
+TC 25
+ZB 3
+Z9 25
+SN 0020-1669
+UT WOS:000297782200041
+PM 22074340
+ER
+
+PT J
+AU Mrazek, Jiri
+   Burda, Jaroslav V.
+TI Can the pH value of water solutions be estimated by quantum chemical
+   calculations of small water clusters?
+SO JOURNAL OF CHEMICAL PHYSICS
+VL 125
+IS 19
+AR 194518
+DI 10.1063/1.2363383
+PD NOV 21 2006
+PY 2006
+RI Burda, Jaroslav/C-9199-2009; Mrazek, Jiri/
+OI Burda, Jaroslav/0000-0001-9909-8797; Mrazek, Jiri/0000-0002-7682-2540
+Z8 0
+ZS 0
+ZB 1
+TC 21
+ZA 0
+ZR 0
+Z9 21
+SN 0021-9606
+EI 1089-7690
+UT WOS:000242181800054
+PM 17129134
+ER
+
+PT J
+AU Shtepliuk, Ivan
+   Santangelo, Maria Francesca
+   Vagin, Mikhail
+   Ivanov, Ivan G.
+   Khranovskyy, Volodymyr
+   Iakimov, Tihomir
+   Eriksson, Jens
+   Yakimova, Rositsa
+TI Understanding Graphene Response to Neutral and Charged Lead Species:
+   Theory and Experiment
+SO MATERIALS
+VL 11
+IS 10
+AR 2059
+DI 10.3390/ma11102059
+PD OCT 2018
+PY 2018
+RI Vagin, Mikhail/M-5162-2013; Shtepliuk, I/B-9968-2017; Ivanov, Ivan Georgiev/H-9714-2013; Eriksson, Jens/L-6330-2015; Santangelo, Maria Francesca/
+OI Vagin, Mikhail/0000-0001-8478-4663; Shtepliuk, I/0000-0002-8685-3332;
+   Ivanov, Ivan Georgiev/0000-0003-1000-0437; Eriksson,
+   Jens/0000-0001-7038-9347; Santangelo, Maria
+   Francesca/0000-0003-0540-1965
+Z8 0
+TC 9
+ZS 0
+ZR 0
+ZA 0
+ZB 0
+Z9 9
+EI 1996-1944
+UT WOS:000448658400273
+PM 30360390
+ER
+
+PT J
+AU Ozawa, Nobuki
+   Chieda, Shigeki
+   Higuchi, Yuji
+   Takeguchi, Tatsuya
+   Yamauchi, Miho
+   Kubo, Momoji
+TI First-principles calculation of activity and selectivity of the partial
+   oxidation of ethylene glycol on Fe(001), Co(0001), and Ni(111)
+SO JOURNAL OF CATALYSIS
+VL 361
+BP 361
+EP 369
+DI 10.1016/j.jcat.2018.03.017
+PD MAY 2018
+PY 2018
+RI Kubo, Momoji/J-4722-2015; Ozawa, Nobuki/S-1813-2019; Takeguchi, Tatsuya/; Higuchi, Yuji/B-9073-2016
+OI Kubo, Momoji/0000-0002-3310-1858; Ozawa, Nobuki/0000-0002-8759-0327;
+   Takeguchi, Tatsuya/0000-0002-8520-3557; Higuchi,
+   Yuji/0000-0001-8759-3168
+ZR 0
+ZB 0
+TC 1
+Z8 0
+ZA 0
+ZS 0
+Z9 1
+SN 0021-9517
+EI 1090-2694
+UT WOS:000431164500038
+ER
+
+PT J
+AU Eid, Kh. M.
+   Ammar, H. Y.
+TI Adsorption of SO2 on Li atoms deposited on MgO (100) surface: DFT
+   calculations
+SO APPLIED SURFACE SCIENCE
+VL 257
+IS 14
+BP 6049
+EP 6058
+DI 10.1016/j.apsusc.2011.01.122
+PD MAR 1 2011
+PY 2011
+RI Ammar, Hussein/AAY-9635-2020; Ammar, Hussein Y/I-6113-2018; Eid, khaled M./
+OI Ammar, Hussein Y/0000-0002-9333-7766; Eid, khaled M./0000-0002-3725-6187
+ZA 0
+Z8 1
+ZS 0
+ZR 1
+ZB 1
+TC 50
+Z9 51
+SN 0169-4332
+UT WOS:000288646900022
+ER
+
+PT J
+AU Tao Peng-Cheng
+   Huang Yan
+   Zhou Xiao-Hao
+   Chen Xiao-Shuang
+   Lu Wei
+TI First principles investigation of the tuning in metal-MoS2 interface
+   induced by doping
+SO ACTA PHYSICA SINICA
+VL 66
+IS 11
+AR 118201
+DI 10.7498/aps.66.118201
+PD JUN 5 2017
+PY 2017
+RI Zhou, Xiaohao/D-5272-2009
+ZR 0
+Z8 1
+ZA 0
+ZS 0
+TC 2
+ZB 0
+Z9 2
+SN 1000-3290
+UT WOS:000403091100036
+ER
+
+PT J
+AU Dong Shan
+   Zhang Yan-Xing
+   Zhang Xi-Lin
+   Xu Xiao-Pei
+   Mao Jian-Jun
+   Li Dong-Lin
+   Chen Zhi-Ming
+   Ma Kuan
+   Fan Zheng-Quan
+   Wei Dan-Dan
+   Yang Zong-Xian
+TI The first-principles study on the interaction of Ni with the
+   yttria-stabilized zirconia and the activity of the interface
+SO ACTA PHYSICA SINICA
+VL 65
+IS 6
+AR 068201
+DI 10.7498/aps.65.068201
+PD MAR 20 2016
+PY 2016
+RI Zhang, Xilin/O-6158-2018; Yang, Zongxian/
+OI Zhang, Xilin/0000-0002-7141-5700; Yang, Zongxian/0000-0002-3015-3804
+ZA 0
+TC 2
+ZR 0
+ZS 0
+Z8 0
+ZB 0
+Z9 2
+SN 1000-3290
+UT WOS:000380354000041
+ER
+
+PT J
+AU He, Chunhui
+   Zhang, Qian
+   Gao, Tingwei
+   Liu, Chenguang
+   Chen, Zhenyu
+   Zhao, Cezhou
+   Zhao, Chun
+   Nichols, Richard J.
+   Dappe, Yannick J.
+   Yang, Li
+TI Charge transport in hybrid platinum/molecule/graphene single molecule
+   junctions
+SO PHYSICAL CHEMISTRY CHEMICAL PHYSICS
+VL 22
+IS 24
+BP 13498
+EP 13504
+DI 10.1039/d0cp01774d
+PD JUN 28 2020
+PY 2020
+RI He, C.H./H-8111-2015; Nichols, Richard/H-2157-2015; yang, li/
+OI He, C.H./0000-0003-0810-5248; Nichols, Richard/0000-0002-1446-8275;
+   yang, li/0000-0002-1040-4223
+TC 4
+ZA 0
+ZR 0
+ZS 0
+Z8 0
+ZB 0
+Z9 4
+SN 1463-9076
+EI 1463-9084
+UT WOS:000542478100014
+PM 32530005
+ER
+
+PT J
+AU Zhang, Wenshu
+   Liu, Siyang
+   Chen, Jian
+   Hu, Fangyuan
+   Wang, Xudong
+   Huang, Hao
+   Yao, Man
+TI Exploring the Potentials of Ti3CiN2-iTx (i=0, 1, 2)-MXene for Anode
+   Materials of High-Performance Sodium-Ion Batteries
+SO ACS APPLIED MATERIALS & INTERFACES
+VL 13
+IS 19
+BP 22341
+EP 22350
+DI 10.1021/acsami.1c02470
+EA MAY 2021
+PD MAY 19 2021
+PY 2021
+ZS 0
+ZR 0
+ZA 0
+ZB 0
+Z8 0
+TC 2
+Z9 2
+SN 1944-8244
+EI 1944-8252
+UT WOS:000655027500025
+PM 33961387
+ER
+
+PT J
+AU Xu Zi-Wei
+   Shi Chang-Shuai
+   Zhao Guang-Hui
+   Wang Ming-Yuan
+   Liu Gui-Wu
+   Qiao Guan-Jun
+TI Hydrogen adsorption mechanism on single-layer MoSe2 for hydrogen
+   evolution reaction: First-principles study
+SO ACTA PHYSICA SINICA
+VL 67
+IS 21
+AR 217102
+DI 10.7498/aps.67.20180882
+PD NOV 5 2018
+PY 2018
+ZB 0
+TC 1
+ZS 0
+ZR 0
+Z8 0
+ZA 0
+Z9 1
+SN 1000-3290
+UT WOS:000449700800031
+ER
+
+PT J
+AU Bahlakeh, Ghasem
+   Ramezanzadeh, Bahram
+   Saeb, Mohammad Reza
+   Terryn, Herman
+   Ghaffari, Mehdi
+TI Corrosion protection properties and interfacial adhesion mechanism of an
+   epoxy/polyamide coating applied on the steel surface decorated with
+   cerium oxide nanofilm: Complementary experimental, molecular dynamics
+   (MD) and first principle quantum mechanics (QM) simulation methods
+SO APPLIED SURFACE SCIENCE
+VL 419
+BP 650
+EP 669
+DI 10.1016/j.apsusc.2017.05.070
+PD OCT 15 2017
+PY 2017
+RI Bahlakeh, Ghasem/AAE-1936-2020; Ramezanzadeh, Bahram/T-4214-2019; Herman, Terryn/A-2255-2013; , Ghasem/; Saeb, Mohammad Reza/
+OI Ramezanzadeh, Bahram/0000-0003-4283-8197; Herman,
+   Terryn/0000-0003-2639-5496; , Ghasem/0000-0003-4537-5642; Saeb, Mohammad
+   Reza/0000-0001-9907-9414
+ZR 1
+Z8 3
+TC 47
+ZA 0
+ZB 1
+ZS 0
+Z9 51
+SN 0169-4332
+EI 1873-5584
+UT WOS:000404816900076
+ER
+
+PT J
+AU Ahmed, Samy M.
+   Shaaban, Ibrahim A.
+   El-Mossalamy, Elsayed H.
+   Mohamed, Tarek A.
+TI Synthesis, Conformational Analysis, Infrared, Raman and UV-Visible
+   Spectra of Novel Schiff Bases compiled with DFT Calculations
+SO COMBINATORIAL CHEMISTRY & HIGH THROUGHPUT SCREENING
+VL 23
+IS 7
+BP 568
+EP 586
+DI 10.2174/1386207323666200127161207
+PD 2020
+PY 2020
+RI Mohamed, Tarek A./J-8547-2019; shaaban, ibrahim/
+OI Mohamed, Tarek A./0000-0002-7570-4411; shaaban,
+   ibrahim/0000-0002-7578-1361
+ZS 0
+Z8 0
+ZB 1
+ZR 0
+ZA 0
+TC 2
+Z9 2
+SN 1386-2073
+EI 1875-5402
+UT WOS:000578999300003
+PM 31985375
+ER
+
+PT J
+AU Wu, Mihye
+   Kim, Ju Ye
+   Park, Hyunsoo
+   Kim, Do Youb
+   Cho, Kyeong Min
+   Lim, Eunsoo
+   Chae, Oh B.
+   Choi, Sungho
+   Kang, Yongku
+   Kim, Jihan
+   Jung, Hee-Tae
+TI Understanding Reaction Pathways in High Dielectric Electrolytes Using
+   beta-Mo2C as a Catalyst for Li-CO2 Batteries
+SO ACS APPLIED MATERIALS & INTERFACES
+VL 12
+IS 29
+BP 32633
+EP 32641
+DI 10.1021/acsami.0c06835
+PD JUL 22 2020
+PY 2020
+RI Jung, Hee-Tae/C-1574-2011; Kim, Jihan/AAE-6280-2021; Kim, Ju Ye/; Wu, Mihye/; Lim, Eunsoo/; Cho, Kyeong Min/; Chae, Ohbyong/; Kim, Do Youb/; Park, Hyunsoo/
+OI Kim, Ju Ye/0000-0003-4262-0569; Wu, Mihye/0000-0003-1068-906X; Lim,
+   Eunsoo/0000-0002-5193-7704; Cho, Kyeong Min/0000-0001-8622-5451; Chae,
+   Ohbyong/0000-0003-1676-9271; Kim, Do Youb/0000-0002-0398-9075; Park,
+   Hyunsoo/0000-0001-9388-173X
+ZS 0
+ZR 0
+ZA 0
+ZB 0
+Z8 0
+TC 6
+Z9 6
+SN 1944-8244
+EI 1944-8252
+UT WOS:000555417200038
+PM 32584023
+ER
+
+PT J
+AU Tomic, K
+   Tatchen, J
+   Marian, CM
+TI Quantum chemical investigation of the electronic spectra of the keto,
+   enol, and keto-imine tautomers of cytosine
+SO JOURNAL OF PHYSICAL CHEMISTRY A
+VL 109
+IS 37
+BP 8410
+EP 8418
+DI 10.1021/jp051510o
+PD SEP 22 2005
+PY 2005
+RI Marian, Christel M./L-1561-2016; Marian, Christel/T-4173-2019
+OI Marian, Christel M./0000-0001-7148-0900; Marian,
+   Christel/0000-0001-7148-0900
+TC 124
+ZR 0
+ZS 0
+Z8 2
+ZB 14
+ZA 0
+Z9 125
+SN 1089-5639
+UT WOS:000231920400026
+PM 16834234
+ER
+
+PT J
+AU Ma, Dong-xu
+   Ren, Fu-de
+   Hu, Tuo-ping
+   Ren, Jun
+TI Theoretical investigation on the structures and thermodynamic properties
+   of mixed boron-, nitrogen- and oxygen-containing three- and
+   four-membered rings BnNmOHp (n=0-3, m=0-3, p=0-3)
+SO JOURNAL OF MOLECULAR STRUCTURE-THEOCHEM
+VL 942
+IS 1-3
+BP 121
+EP 130
+DI 10.1016/j.theochem.2009.12.008
+PD FEB 28 2010
+PY 2010
+ZS 0
+Z8 0
+ZA 0
+ZR 0
+ZB 0
+TC 1
+Z9 1
+SN 0166-1280
+UT WOS:000275137600022
+ER
+
+PT J
+AU Zhan Wei-Shen
+   Pan Shi
+   Wang Qiao
+   Li Hong
+   Zhang Yi
+TI Comparison of D-SS and D-ST Dyes as Photo Sensitizers in Dye-Sensitized
+   Solar Cells
+SO ACTA PHYSICO-CHIMICA SINICA
+VL 28
+IS 1
+BP 78
+EP 84
+DI 10.3866/PKU.WHXB20122878
+PD JAN 2012
+PY 2012
+ZB 0
+ZR 0
+TC 4
+Z8 4
+ZS 0
+ZA 0
+Z9 5
+SN 1000-6818
+UT WOS:000299721900010
+ER
+
+PT J
+AU Gholivand, Khodayar
+   Maghsoud, Yazdan
+   Hosseini, Mahdieh
+   Kahnouji, Mohammad
+TI Toward the comprehensive calculations on the relationship between H-1,
+   C-13, P-31 chemical shifts, (2)J(PH), and the bonding structure of
+   different phosphoryl benzamides
+SO MAGNETIC RESONANCE IN CHEMISTRY
+VL 57
+IS 4
+BP 108
+EP 116
+DI 10.1002/mrc.4820
+PD APR 2019
+PY 2019
+RI Maghsoud, Yazdan/V-1680-2018; Gholivand, Khodayar/V-6907-2017
+OI Maghsoud, Yazdan/0000-0002-4051-0844; Gholivand,
+   Khodayar/0000-0001-8884-7895
+TC 2
+ZS 0
+ZB 0
+Z8 0
+ZA 0
+ZR 0
+Z9 2
+SN 0749-1581
+EI 1097-458X
+UT WOS:000460782900006
+PM 30578739
+ER
+
+PT J
+AU Wan, Liang
+   Qi, Dongdong
+   Zhang, Yuexing
+TI The effect of beta-saturated pyrrolic rings on the electronic structures
+   and aromaticity of magnesium porphyrin derivatives: A density functional
+   study
+SO JOURNAL OF MOLECULAR GRAPHICS & MODELLING
+VL 30
+BP 15
+EP 23
+DI 10.1016/j.jmgm.2011.05.003
+PD SEP 2011
+PY 2011
+RI Qi, Dongdong/AAK-9830-2020; Zhang, Yuexing/A-9975-2008
+OI Zhang, Yuexing/0000-0002-8510-5033
+ZB 2
+ZR 0
+ZA 0
+Z8 1
+ZS 0
+TC 16
+Z9 16
+SN 1093-3263
+EI 1873-4243
+UT WOS:000297093600003
+PM 21715203
+ER
+
+PT J
+AU Inomata, Koichiro
+   Ikeda, Naomichi
+   Tezuka, Nobuki
+   Goto, Ryogo
+   Sugimoto, Satoshi
+   Wojcik, Marek
+   Jedryka, Eva
+TI Highly spin-polarized materials and devices for spintronics
+SO SCIENCE AND TECHNOLOGY OF ADVANCED MATERIALS
+VL 9
+IS 1
+AR 014101
+DI 10.1088/1468-6996/9/1/014101
+PD JAN-MAR 2008
+PY 2008
+RI Jedryka, Ewa/S-8626-2016; Wojcik, Marek/A-3916-2012
+OI Jedryka, Ewa/0000-0002-2569-1341; Wojcik, Marek/0000-0003-0791-5011
+ZB 1
+ZA 0
+ZS 0
+Z8 6
+TC 226
+ZR 0
+Z9 229
+SN 1468-6996
+EI 1878-5514
+UT WOS:000257128300011
+PM 27877927
+ER
+
+PT J
+AU Chew, Khian-Hooi
+   Kuwahara, Riichi
+   Ohno, Kaoru
+TI First-principles study on the atomistic corrosion processes of iron
+SO PHYSICAL CHEMISTRY CHEMICAL PHYSICS
+VL 20
+IS 3
+BP 1653
+EP 1663
+DI 10.1039/c7cp04022a
+PD JAN 21 2018
+PY 2018
+RI Chew, Khian-Hooi/Y-9873-2019; Chew, Khian-Hooi/C-5142-2011; Kuwahara, Riichi/; Ohno, Kaoru/
+OI Chew, Khian-Hooi/0000-0002-4940-9128; Chew,
+   Khian-Hooi/0000-0002-4940-9128; Kuwahara, Riichi/0000-0002-3777-3555;
+   Ohno, Kaoru/0000-0002-1980-5971
+ZB 0
+ZA 0
+Z8 0
+ZS 0
+ZR 0
+TC 9
+Z9 9
+SN 1463-9076
+EI 1463-9084
+UT WOS:000423019600033
+PM 29261192
+ER
+
+PT J
+AU Costentin, C
+   Robert, M
+   Saveant, JM
+TI Successive removal of chloride ions from organic polychloride
+   pollutants. Mechanisms of reductive electrochemical elimination in
+   aliphatic gem-polychlorides, alpha,beta-polychloroalkenes, and
+   alpha,beta-polychloroalkanes in mildly protic medium
+SO JOURNAL OF THE AMERICAN CHEMICAL SOCIETY
+VL 125
+IS 35
+BP 10729
+EP 10739
+DI 10.1021/ja036141t
+PD SEP 3 2003
+PY 2003
+TC 88
+ZA 0
+Z8 1
+ZB 12
+ZR 0
+ZS 1
+Z9 88
+SN 0002-7863
+EI 1520-5126
+UT WOS:000185012800053
+PM 12940759
+ER
+
+PT J
+AU House, Robert A.
+   Maitra, Urmimala
+   Perez-Osorio, Miguel A.
+   Lozano, Juan G.
+   Jin, Liyu
+   Somerville, James W.
+   Duda, Laurent C.
+   Nag, Abhishek
+   Walters, Andrew
+   Zhou, Ke-Jin
+   Roberts, Matthew R.
+   Bruce, Peter G.
+TI Superstructure control of first-cycle voltage hysteresis in oxygen-redox
+   cathodes
+SO NATURE
+VL 577
+IS 7791
+BP 502
+EP +
+DI 10.1038/s41586-019-1854-3
+PD JAN 2020
+PY 2020
+RI House, Robert/AAN-3322-2020; Lozano, Juan G/U-2522-2019; Duda, Laurent/AGG-2116-2022; Pérez-Osorio, Miguel A./AAA-5815-2021; Duda, Laurent/; Maitra, Urmimala/; Zhou, Ke-Jin/; Nag, Abhishek/
+OI House, Robert/0000-0002-7415-477X; Lozano, Juan G/0000-0003-2900-3902;
+   Pérez-Osorio, Miguel A./0000-0001-8077-5655; Duda,
+   Laurent/0000-0001-8471-0955; Maitra, Urmimala/0000-0003-4486-1147; Zhou,
+   Ke-Jin/0000-0001-9293-0595; Nag, Abhishek/0000-0002-1394-5105
+TC 168
+ZA 0
+ZR 0
+Z8 8
+ZS 0
+ZB 12
+Z9 170
+SN 0028-0836
+EI 1476-4687
+UT WOS:000509200100013
+PM 31816625
+ER
+
+PT J
+AU Kim, Kyoung Hoon
+   Jung, Jaehoon
+   Park, Bo Keun
+   Han, Young-Kyu
+   Park, Joon T.
+TI Cyclic voltammetry modeling, geometries, and electronic properties for
+   metallofullerene complexes with mu(3)-eta(2):eta(2):eta(2)-C-60 bonding
+   mode
+SO JOURNAL OF COMPUTATIONAL CHEMISTRY
+VL 28
+IS 6
+BP 1100
+EP 1106
+DI 10.1002/jcc.20639
+PD APR 30 2007
+PY 2007
+RI Park, Bo Keun/AFT-6345-2022; Park, Joon Taik/C-1947-2011; Jung, Jaehoon/A-5289-2009
+OI Park, Bo Keun/0000-0002-4066-0500; Jung, Jaehoon/0000-0001-6550-139X
+TC 4
+Z8 0
+ZB 0
+ZA 0
+ZR 0
+ZS 0
+Z9 4
+SN 0192-8651
+UT WOS:000245029500011
+PM 17279498
+ER
+
+PT J
+AU Li, P
+   Bu, YX
+TI Double proton transfer and one-electron oxidation behavior in double
+   H-bonded glycinamide-glycine complex in the gas phase
+SO JOURNAL OF COMPUTATIONAL CHEMISTRY
+VL 26
+IS 6
+BP 552
+EP 560
+DI 10.1002/jcc.20191
+PD APR 30 2005
+PY 2005
+TC 0
+Z8 0
+ZS 0
+ZR 0
+ZB 0
+ZA 0
+Z9 0
+SN 0192-8651
+EI 1096-987X
+UT WOS:000227929700003
+PM 15726572
+ER
+
+PT J
+AU Humeres, Eduardo
+   de Castro, Karen M.
+   Debacher, Nito Angelo
+   Moreira, Regina de F. P. M.
+TI Reaction Mechanism of the Reduction of Ozone on Graphite
+SO LANGMUIR
+VL 36
+IS 38
+BP 11225
+EP 11236
+DI 10.1021/acs.langmuir.0c01372
+PD SEP 29 2020
+PY 2020
+RI de Fatima Peralta Muniz Moreira, Regina/ABG-5854-2020; Humeres, Eduardo/ABI-1702-2020; Debacher, Nito A/B-2154-2016; de Fatima Peralta Muniz Moreira, Regina/F-7465-2010; Debacher, Nito/ABI-3089-2020; Mendes de Castro, Karen/
+OI Debacher, Nito A/0000-0002-8809-8457; de Fatima Peralta Muniz Moreira,
+   Regina/0000-0002-2863-7260; Debacher, Nito/0000-0002-8809-8457; Mendes
+   de Castro, Karen/0000-0001-8709-8052
+TC 2
+ZB 0
+ZR 0
+ZS 0
+Z8 0
+ZA 0
+Z9 2
+SN 0743-7463
+UT WOS:000576747600006
+PM 32857524
+ER
+
+PT J
+AU Kim, Hyungjun
+   Kim, Duho
+   Cho, Maenghyo
+TI Chemomechanical Design Factors for High Performance in Manganese-Based
+   Spinel Cathode Materials for Advanced Sodium-Ion Batteries
+SO ACS APPLIED MATERIALS & INTERFACES
+VL 12
+IS 20
+BP 22789
+EP 22797
+DI 10.1021/acsami.0c01687
+PD MAY 20 2020
+PY 2020
+RI Kim, Hyungjun/AAB-5604-2022
+OI Kim, Hyungjun/0000-0003-0879-0871
+TC 6
+ZR 0
+ZA 0
+ZS 0
+ZB 0
+Z8 0
+Z9 6
+SN 1944-8244
+EI 1944-8252
+UT WOS:000537394100038
+PM 32345005
+ER
+
+PT J
+AU Wang, Shuaiwei
+   Chen, Zhuoran
+   Yang, Baocheng
+   Chen, Houyang
+   Ruckenstein, Eli
+TI Mechanical deformation: A feasible route for reconfiguration of inner
+   interfaces to modulate the high performance of three-dimensional porous
+   carbon material anodes in stretchable lithium-Ion batteries
+SO JOURNAL OF COLLOID AND INTERFACE SCIENCE
+VL 555
+BP 431
+EP 437
+DI 10.1016/j.jcis.2019.07.101
+PD NOV 1 2019
+PY 2019
+RI Chen, Houyang/C-7959-2009
+OI Chen, Houyang/0000-0002-3319-5743
+ZS 0
+ZA 0
+Z8 1
+TC 6
+ZB 0
+ZR 0
+Z9 7
+SN 0021-9797
+EI 1095-7103
+UT WOS:000488652300045
+PM 31400535
+ER
+
+PT J
+AU Marian, C
+   Nolting, D
+   Weinkauf, R
+TI The electronic spectrum of protonated adenine: Theory and experiment
+SO PHYSICAL CHEMISTRY CHEMICAL PHYSICS
+VL 7
+IS 18
+BP 3306
+EP 3316
+DI 10.1039/b507422c
+PD 2005
+PY 2005
+RI Marian, Christel/T-4173-2019; Marian, Christel M./L-1561-2016
+OI Marian, Christel/0000-0001-7148-0900; Marian, Christel
+   M./0000-0001-7148-0900
+ZS 0
+ZR 0
+ZB 7
+TC 85
+ZA 0
+Z8 2
+Z9 85
+SN 1463-9076
+EI 1463-9084
+UT WOS:000231618300008
+PM 16240045
+ER
+
+PT J
+AU Zhang, Hongna
+   Weiss, Ian
+   Rudra, Indranil
+   Jo, Won Jun
+   Kellner, Simon
+   Katsoukis, Georgios
+   Galoppini, Elena
+   Frei, Heinz
+TI Controlling and Optimizing Photoinduced Charge Transfer across Ultrathin
+   Silica Separation Membrane with Embedded Molecular Wires for Artificial
+   Photosynthesis
+SO ACS APPLIED MATERIALS & INTERFACES
+VL 13
+IS 20
+BP 23532
+EP 23546
+DI 10.1021/acsami.1c00735
+EA MAY 2021
+PD MAY 26 2021
+PY 2021
+TC 1
+Z8 0
+ZB 0
+ZA 0
+ZS 0
+ZR 0
+Z9 1
+SN 1944-8244
+EI 1944-8252
+UT WOS:000657202500019
+PM 33983702
+ER
+
+PT J
+AU Dehghani, Ali
+   Bahlakeh, Ghasem
+   Ramezanzadeh, Bahram
+TI A detailed electrochemical/theoretical exploration of the aqueous
+   Chinese gooseberry fruit shell extract as a green and cheap corrosion
+   inhibitor for mild steel in acidic solution
+SO JOURNAL OF MOLECULAR LIQUIDS
+VL 282
+BP 366
+EP 384
+DI 10.1016/j.molliq.2019.03.011
+PD MAY 15 2019
+PY 2019
+RI Bahlakeh, Ghasem/AAE-1936-2020; Ramezanzadeh, Bahram/T-4214-2019; , Ghasem/
+OI Ramezanzadeh, Bahram/0000-0003-4283-8197; , Ghasem/0000-0003-4537-5642
+TC 90
+ZS 0
+ZR 0
+Z8 0
+ZB 5
+ZA 0
+Z9 90
+SN 0167-7322
+EI 1873-3166
+UT WOS:000465060400040
+ER
+
+PT J
+AU Kokatam, Swarnalatha
+   Ray, Kallol
+   Pap, Joseph
+   Bill, Eckhard
+   Geiger, William E.
+   LeSuer, Robert J.
+   Rieger, Philip H.
+   Weyhermuller, Thomas
+   Neese, Frank
+   Wieghardt, Karl
+TI Molecular and electronic structure of square-planar gold complexes
+   containing two 1,2-di(4-tert-butylphenyl)ethylene-1,2-dithiolato
+   ligands: [Au(L-2)(2)](1+/0/1-/2-). A combined experimental and
+   computational study
+SO INORGANIC CHEMISTRY
+VL 46
+IS 4
+BP 1100
+EP 1111
+DI 10.1021/ic061181u
+PD FEB 19 2007
+PY 2007
+RI Weyhermüller, Thomas/G-6730-2012; Wieghardt, Karl/B-4179-2014; Neese, Frank/J-4959-2014; Pap, József S/AAA-4098-2021; Pap, Jozsef/
+OI Weyhermüller, Thomas/0000-0002-0399-7999; Wieghardt,
+   Karl/0000-0003-0600-7855; Neese, Frank/0000-0003-4691-0547; Pap,
+   Jozsef/0000-0003-1704-0925
+ZB 2
+ZS 0
+ZR 0
+TC 57
+Z8 0
+ZA 0
+Z9 57
+SN 0020-1669
+EI 1520-510X
+UT WOS:000244119300013
+PM 17291110
+ER
+
+PT J
+AU Zhao, Xiaolin
+   Hu, Zhongli
+   Li, Yining
+   Wang, Youwei
+   Song, Erhong
+   Li Zhang
+   Liu, Jianjun
+TI Assembling organic-inorganic building blocks for high-capacity electrode
+   design
+SO MATERIALS HORIZONS
+VL 8
+IS 6
+BP 1825
+EP 1834
+DI 10.1039/d1mh00128k
+EA APR 2021
+PD JUN 1 2021
+PY 2021
+RI Song, Erhong/AAL-7659-2021; liu, jian jun/
+OI Song, Erhong/0000-0003-2287-3307; liu, jian jun/0000-0003-2452-6966
+ZB 0
+Z8 0
+ZR 0
+TC 0
+ZS 0
+ZA 0
+Z9 0
+SN 2051-6347
+EI 2051-6355
+UT WOS:000643904400001
+PM 34846511
+ER
+
+PT J
+AU Rawal, Saurin H.
+   Mckee, William C.
+   Xu, Ye
+TI Estimation of electric field effects on the adsorption of molecular
+   superoxide species on Au based on density functional theory
+SO PHYSICAL CHEMISTRY CHEMICAL PHYSICS
+VL 19
+IS 48
+BP 32626
+EP 32635
+DI 10.1039/c7cp06242g
+PD DEC 28 2017
+PY 2017
+RI Xu, Ye/B-5447-2009
+OI Xu, Ye/0000-0002-6406-7832
+ZA 0
+TC 7
+ZS 0
+ZB 0
+ZR 0
+Z8 0
+Z9 7
+SN 1463-9076
+EI 1463-9084
+UT WOS:000417958900046
+PM 29192706
+ER
+
+PT J
+AU Brovarets', Ol'ha O.
+   Hovorun, Dmytro M.
+TI Prototropic tautomerism and basic molecular principles of hypoxanthine
+   mutagenicity: an exhaustive quantum-chemical analysis
+SO JOURNAL OF BIOMOLECULAR STRUCTURE & DYNAMICS
+VL 31
+IS 8
+BP 913
+EP 936
+DI 10.1080/07391102.2012.715041
+PD AUG 1 2013
+PY 2013
+RI Brovarets', Ol'ha/I-2358-2016; Hovorun, Dmytro/
+OI Brovarets', Ol'ha/0000-0002-8929-293X; Hovorun,
+   Dmytro/0000-0002-5579-5520
+TC 49
+ZB 16
+ZR 0
+Z8 0
+ZA 0
+ZS 0
+Z9 49
+SN 0739-1102
+EI 1538-0254
+UT WOS:000321732100010
+PM 22962845
+ER
+
+PT J
+AU Szuplewska, A.
+   Rozmyslowska-Wojciechowska, A.
+   Pozniak, S.
+   Wojciechowski, T.
+   Birowska, M.
+   Popielski, M.
+   Chudy, M.
+   Ziemkowska, W.
+   Chlubny, L.
+   Moszczynska, D.
+   Olszyna, A.
+   Majewski, J. A.
+   Jastrzebska, A. M.
+TI Multilayered stable 2D nano-sheets of Ti2NTx MXene: synthesis,
+   characterization, and anticancer activity
+SO JOURNAL OF NANOBIOTECHNOLOGY
+VL 17
+IS 1
+AR 114
+DI 10.1186/s12951-019-0545-4
+PD NOV 11 2019
+PY 2019
+RI Moszczyńska, Dorota/AAP-1952-2020; Birowska, Magdalena/AAK-2402-2020; JACEK, MAJEWSKI/AAQ-1894-2020; Birowska, Magdalena/A-6724-2016; Jastrzębska, Agnieszka/AAK-5853-2021; Ziemkowska, Wanda/; Majewski, Jacek/; Chudy, Michal/; Olszyna, Andrzej/; Chlubny, Leszek/; Szuplewska, Aleksandra/; Popielska, Magdalena/
+OI Moszczyńska, Dorota/0000-0001-9787-3294; Jastrzębska,
+   Agnieszka/0000-0001-8900-1859; Ziemkowska, Wanda/0000-0003-0932-6384;
+   Majewski, Jacek/0000-0002-8686-7996; Chudy, Michal/0000-0001-8530-406X;
+   Olszyna, Andrzej/0000-0002-7812-4180; Chlubny,
+   Leszek/0000-0001-8103-8227; Szuplewska, Aleksandra/0000-0001-8749-5023;
+   Popielska, Magdalena/0000-0001-6357-7913
+ZA 0
+ZR 0
+Z8 1
+ZS 0
+TC 25
+ZB 3
+Z9 26
+EI 1477-3155
+UT WOS:000496422700001
+PM 31711491
+ER
+
+PT J
+AU Burghaus, Uwe
+TI Gas-surface interactions on two-dimensional crystals
+SO SURFACE SCIENCE REPORTS
+VL 74
+IS 2
+BP 141
+EP 177
+DI 10.1016/j.surfrep.2019.01.001
+PD MAY 2019
+PY 2019
+ZA 0
+ZB 0
+ZS 0
+Z8 0
+TC 7
+ZR 0
+Z9 7
+SN 0167-5729
+EI 1879-274X
+UT WOS:000472585300002
+ER
+
+PT J
+AU Sawy, Amany M.
+   Barhoum, Ahmed
+   Gaber, Sara A. Abdel
+   El-Hallouty, Salwa M.
+   Shousha, Wafaa G.
+   Maarouf, Ahmed A.
+   Khalil, Ahmed S. G.
+TI Insights of doxorubicin loaded graphene quantum dots: Synthesis, DFT
+   drug interactions, and cytotoxicity
+SO MATERIALS SCIENCE & ENGINEERING C-MATERIALS FOR BIOLOGICAL APPLICATIONS
+VL 122
+AR 111921
+DI 10.1016/j.msec.2021.111921
+EA FEB 2021
+PD MAR 2021
+PY 2021
+RI Barhoum, Ahmed/ABG-2656-2021; Abdel Gaber, Sara/
+OI Barhoum, Ahmed/0000-0002-4859-5264; Abdel Gaber,
+   Sara/0000-0002-6190-0796
+TC 9
+ZR 0
+ZB 1
+ZS 0
+ZA 0
+Z8 0
+Z9 8
+SN 0928-4931
+EI 1873-0191
+UT WOS:000624406400003
+PM 33641914
+ER
+
+PT J
+AU Cakir, I.
+   Soykan, U.
+   Cetin, S.
+   Karaboga, F.
+   Zalaoglu, Y.
+   Dogruer, M.
+   Terzioglu, C.
+   Yildirim, G.
+TI Electrochemical and spectroscopic characteristics of
+   p-acryloyloxybenzoyl chloride and p-acryloyloxybenzoic acid and
+   antimicrobial activity of organic compounds
+SO SPECTROCHIMICA ACTA PART A-MOLECULAR AND BIOMOLECULAR SPECTROSCOPY
+VL 132
+BP 502
+EP 513
+DI 10.1016/j.saa.2014.04.180
+PD NOV 11 2014
+PY 2014
+RI SOYKAN, UGUR/I-4836-2019; doğruer, musa/AAT-4108-2021; dogruer, musa/; Yildirim, Gurcan/
+OI SOYKAN, UGUR/0000-0002-9244-026X; doğruer, musa/0000-0002-4214-9159;
+   dogruer, musa/0000-0002-9876-8629; Yildirim, Gurcan/0000-0002-5177-3703
+ZS 0
+TC 1
+ZR 0
+ZA 0
+Z8 0
+ZB 0
+Z9 1
+SN 1386-1425
+EI 1873-3557
+UT WOS:000340330800060
+PM 24892528
+ER
+
+PT J
+AU Seefeld, KA
+   Plutzer, C
+   Lowenich, D
+   Haber, T
+   Linder, R
+   Kleinermanns, K
+   Tatchen, J
+   Marian, CM
+TI Tautomers and electronic states of jet-cooled 2-aminopurine investigated
+   by double resonance spectroscopy and theory
+SO PHYSICAL CHEMISTRY CHEMICAL PHYSICS
+VL 7
+IS 16
+BP 3021
+EP 3026
+DI 10.1039/b505954b
+PD 2005
+PY 2005
+RI Marian, Christel M./L-1561-2016; Marian, Christel/T-4173-2019; Häber, Thomas/AAG-1362-2019
+OI Marian, Christel M./0000-0001-7148-0900; Marian,
+   Christel/0000-0001-7148-0900; Häber, Thomas/0000-0002-9761-4556
+ZS 0
+ZA 0
+ZB 10
+Z8 0
+ZR 0
+TC 51
+Z9 51
+SN 1463-9076
+EI 1463-9084
+UT WOS:000230931200005
+PM 16186905
+ER
+
+PT J
+AU Goto, Takeyoshi
+   Bec, Krzysztof B.
+   Ozaki, Yukihiro
+TI Interpretation of the (A)over-tilde -> (X)over-tilde transition of
+   hydrated protons in aqueous solutions observed in the far-UV region with
+   quantum chemical calculations
+SO PHYSICAL CHEMISTRY CHEMICAL PHYSICS
+VL 19
+IS 32
+BP 21490
+EP 21499
+DI 10.1039/c7cp01766a
+PD AUG 28 2017
+PY 2017
+RI Beć, Krzysztof/F-2936-2015; Beć, Krzysztof/AAO-6061-2021
+OI Beć, Krzysztof/0000-0003-0822-5098; Beć, Krzysztof/0000-0003-0822-5098
+TC 2
+Z8 0
+ZS 0
+ZR 0
+ZA 0
+ZB 2
+Z9 2
+SN 1463-9076
+EI 1463-9084
+UT WOS:000407765900030
+PM 28762400
+ER
+
+PT J
+AU Palanisamy, Vasanthi
+   Sanphui, Palash
+   Prakash, Muthuramalingam
+   Chernyshev, Vladimir
+TI Multicomponent solid forms of the uric acid reabsorption inhibitor
+   lesinurad and cocrystal polymorphs with urea: DFT simulation and
+   solubility study
+SO ACTA CRYSTALLOGRAPHICA SECTION C-STRUCTURAL CHEMISTRY
+VL 75
+BP 1102
+EP +
+DI 10.1107/S2053229619008829
+PN 8
+PD AUG 2019
+PY 2019
+RI Muthuramalingam, PRAKASH/B-3514-2008; Chernyshev, Vladimir/A-7841-2014
+OI Muthuramalingam, PRAKASH/0000-0002-1886-7708; Chernyshev,
+   Vladimir/0000-0001-8514-7471
+Z8 0
+TC 6
+ZR 0
+ZA 0
+ZB 1
+ZS 0
+Z9 6
+SN 2053-2296
+UT WOS:000478755600012
+PM 31380793
+ER
+
+PT J
+AU Yang, Jing
+   Luo, Jinda
+   Kuang, Yi
+   He, Yichu
+   Wen, Piaopiao
+   Xiong, Lingling
+   Wang, Xianyou
+   Yang, Zhenhua
+TI Exploring the Efficient Na/K Storage Mechanism and Vacancy
+   Defect-Boosted Li+ Diffusion Based on VSe2/MoSe2 Heterostructure
+   Engineering
+SO ACS APPLIED MATERIALS & INTERFACES
+VL 13
+IS 1
+BP 2072
+EP 2080
+DI 10.1021/acsami.0c19934
+PD JAN 13 2021
+PY 2021
+ZB 0
+ZA 0
+ZS 0
+ZR 0
+Z8 0
+TC 3
+Z9 3
+SN 1944-8244
+EI 1944-8252
+UT WOS:000611066000202
+PM 33347756
+ER
+
+PT J
+AU Karimova, Natalia V.
+   Luo, Man
+   Grassian, Vicki H.
+   Gerber, R. Benny
+TI Absorption spectra of benzoic acid in water at different pH and in the
+   presence of salts: insights from the integration of experimental data
+   and theoretical cluster models
+SO PHYSICAL CHEMISTRY CHEMICAL PHYSICS
+VL 22
+IS 9
+BP 5046
+EP 5056
+DI 10.1039/c9cp06728k
+PD MAR 7 2020
+PY 2020
+OI Karimova, Natalia/0000-0002-4616-1884
+ZA 0
+ZR 0
+ZS 0
+Z8 0
+ZB 2
+TC 12
+Z9 12
+SN 1463-9076
+EI 1463-9084
+UT WOS:000519248900019
+PM 32077456
+ER
+
+PT J
+AU Deng Xiao-Qing
+   Sun Lin
+   Li Chun-Xian
+TI Spin transport properties for iron-doped zigzag-graphene nanoribbons
+   interface
+SO ACTA PHYSICA SINICA
+VL 65
+IS 6
+AR 068503
+DI 10.7498/aps.65.068503
+PD MAR 20 2016
+PY 2016
+ZA 0
+ZS 0
+Z8 3
+ZR 0
+TC 3
+ZB 0
+Z9 3
+SN 1000-3290
+UT WOS:000380354000044
+ER
+
+PT J
+AU van Duin, Adri C. T.
+   Merinov, Boris V.
+   Han, Sang Soo
+   Dorso, Claudio O.
+   Goddard, William A., III
+TI ReaxFF Reactive Force Field for the Y-Doped BaZrO3 Proton Conductor with
+   Applications to Diffusion Rates for Multigranular Systems
+SO JOURNAL OF PHYSICAL CHEMISTRY A
+VL 112
+IS 45
+BP 11414
+EP 11422
+DI 10.1021/jp801082q
+PD NOV 13 2008
+PY 2008
+ZR 0
+TC 74
+ZB 1
+ZA 0
+ZS 0
+Z8 2
+Z9 74
+SN 1089-5639
+UT WOS:000260675700014
+PM 18925731
+ER
+
+PT J
+AU Bhattacharyya, Sudeep
+   Stankovich, Marian T.
+   Truhlar, Donald G.
+   Gao, Jiali
+TI Combined quantum mechanical and molecular mechanical simulations of one-
+   and two-electron reduction potentials of flavin cofactor in water,
+   medium-chain acyl-CoA dehydrogenase, and cholesterol oxidase
+SO JOURNAL OF PHYSICAL CHEMISTRY A
+VL 111
+IS 26
+BP 5729
+EP 5742
+DI 10.1021/jp071526+
+PD JUL 5 2007
+PY 2007
+CT 232nd National Meeting of the American-Chemical-Society (ACS)
+CY SEP 10-14, 2006
+CL San Francisco, CA
+SP Amer Chem Soc (ACS)
+RI Bhattacharyay, Sudeep/AAW-4015-2021; Truhlar, Donald G./G-7076-2015
+OI Bhattacharyay, Sudeep/0000-0002-3960-1239; Truhlar, Donald
+   G./0000-0002-7742-7294
+ZB 12
+ZR 0
+ZA 0
+TC 67
+Z8 1
+ZS 0
+Z9 67
+SN 1089-5639
+EI 1520-5215
+UT WOS:000247573600018
+PM 17567113
+ER
+
+PT J
+AU Holm, AH
+   Yusta, L
+   Carlqvist, P
+   Brinck, T
+   Daasbjerg, K
+TI Thermochemistry of arylselanyl radicals and the pertinent ions in
+   acetonitrile
+SO JOURNAL OF THE AMERICAN CHEMICAL SOCIETY
+VL 125
+IS 8
+BP 2148
+EP 2157
+DI 10.1021/ja0291787
+PD FEB 26 2003
+PY 2003
+RI Daasbjerg, Kim/AAW-9975-2020; Brinck, Tore/ABD-9838-2020; Daasbjerg, Kim/ABI-1369-2020; Brinck, Tore/
+OI Daasbjerg, Kim/0000-0003-0212-8190; Brinck, Tore/0000-0003-2673-075X
+ZB 3
+ZA 0
+ZS 0
+TC 21
+ZR 0
+Z8 0
+Z9 21
+SN 0002-7863
+UT WOS:000181088200037
+PM 12590543
+ER
+
+PT J
+AU Liu Hong-Liang
+   Zhang Xin
+   Wang Yang
+   Xiao Yi-Xin
+   Zhang Jiu-Xing
+TI Surface electronic structures and emission property of single crystal
+   LaB6 typical surfaces
+SO ACTA PHYSICA SINICA
+VL 67
+IS 4
+AR 048101
+DI 10.7498/aps.67.20172187
+PD FEB 20 2018
+PY 2018
+ZB 0
+ZR 0
+Z8 3
+TC 7
+ZS 0
+ZA 0
+Z9 8
+SN 1000-3290
+UT WOS:000428113200028
+ER
+
+PT J
+AU Cardoso, DR
+   Homem-De-Mello, P
+   Olsen, K
+   Da Silva, ABF
+   Franco, DW
+   Skibsted, LH
+TI Deactivation of triplet-excited riboflavin by purine derivatives:
+   Important role of uric acid in light-induced oxidation of milk
+   sensitized by riboflavin
+SO JOURNAL OF AGRICULTURAL AND FOOD CHEMISTRY
+VL 53
+IS 9
+BP 3679
+EP 3684
+DI 10.1021/jf048347z
+PD MAY 4 2005
+PY 2005
+RI Olsen, Karsten/C-3110-2014; da Silva, Alberico Borges Ferreira/AAB-3642-2021; Skibsted, Leif H. H./M-6933-2014; da Silva, Albérico B. F./C-3274-2011; Cardoso, Daniel R/B-9775-2012; Franco, Douglas/F-7735-2012; Homem-de-Mello, Paula/B-6618-2011
+OI Olsen, Karsten/0000-0002-0104-6292; da Silva, Alberico Borges
+   Ferreira/0000-0003-2337-1042; Skibsted, Leif H. H./0000-0003-1734-5016;
+   Cardoso, Daniel R/0000-0002-3492-3327; Homem-de-Mello,
+   Paula/0000-0002-7049-4689
+ZA 0
+ZB 19
+ZS 0
+Z8 0
+ZR 0
+TC 24
+Z9 24
+SN 0021-8561
+EI 1520-5118
+UT WOS:000228810200062
+PM 15853419
+ER
+
+PT J
+AU Yang, Wei
+   Ma Xin-Guo
+   Lin, Zhu
+   Hua, He
+   Huang Chu-Yun
+TI Interfacial cohesive interaction and band modulation of two-dimensional
+   MoS2/graphene heterostructure
+SO ACTA PHYSICA SINICA
+VL 66
+IS 8
+AR 087101
+DI 10.7498/aps.66.087101
+PD APR 20 2017
+PY 2017
+RI Ma, Xinguo/AAV-9188-2020
+TC 4
+ZS 0
+Z8 3
+ZB 0
+ZA 0
+ZR 0
+Z9 4
+SN 1000-3290
+UT WOS:000402757400031
+ER
+
+EF
